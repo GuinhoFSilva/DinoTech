@@ -11,7 +11,7 @@ header{
 }
 body {
     height: 100px;
-    background-image: url("../Site/assets/fundoiniciofinal.jpg");
+    background-image: url("../assets/fundoiniciofinal.jpg");
     background-size: auto ;
     background-size: cover;
     background-position: center;
@@ -99,7 +99,7 @@ header a {
 /* ABA CURIOSIDADES */
 .curiosidades{
     height: 100px;
-    background-image: url("../Site/assets/fundofinalcuriosidades.jpg");
+    background-image: url("../assets/fundofinalcuriosidades.jpg");
     background-size: auto ;
     background-size: cover;
     background-position: center;
