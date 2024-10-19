@@ -5,38 +5,32 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    height: 8%; 
+    height: 8dvh; 
     background-color: rgba(0, 0, 0, 0.554);
     
 }
 body {
-    height: 100px;
+
+    padding-top: 12dvh;
     background-image: url("../assets/fundoiniciofinal.jpg");
-    background-size: auto ;
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
     background-repeat: no-repeat;
 }
-.container{
-
-    display: flex;
-    width: 80%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
 
 header .container{
-
+    
     justify-content: space-between;
     align-items: center;
     height: 100%;
     width: 95%;
-
+    
 }
+
+
 header .navbar{
 
-    width: auto;
     font-size: 23px;
     display: flex;
     list-style: none;
@@ -44,13 +38,11 @@ header .navbar{
     gap: 15px;
     
     
-
 }
 header .titulo{
     
     font-weight: 800;
     color: aliceblue;
-    width: fit-content;
     
 }
 
@@ -60,13 +52,20 @@ header a {
     color:aliceblue;
 }
 
+.container{
+
+    display: flex;
+    width: 80%;
+    padding: 0 2%;
+}
+
 .atual{
     
     font-weight: 800;
 }
 
-.containerbox .box, .boxdois{
-
+.box, .secondary-box{
+    
     color: aliceblue;
     background-color: rgba(0, 0, 0, 0.554);
     width: 500px;
@@ -77,19 +76,15 @@ header a {
     margin-left: 3%;
 
 }
-.containerbox .caixa{
 
-    margin-top: 7%;
-
-}
-.containerbox .caixa, .caixadois{
+.content, .secondary-content{
 
     display: flex;
     width: 1100px;
     justify-content:space-between;
 }
 
-.containerbox .caixadois{
+.secondary-content{
     
     margin-top: 2%;
     justify-content:center;
@@ -100,21 +95,21 @@ header a {
 .curiosidades{
     height: 100px;
     background-image: url("../assets/fundofinalcuriosidades.jpg");
-    background-size: auto ;
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
     background-repeat: no-repeat;
 }
 
-.containertexto{
+.container-text{
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 60dvh;
     width: 100%;
-    margin-top: 20%;
     color: aliceblue;
     font-size: 45px;
     text-align: center;
-    z-index: 2;
+    
 }
