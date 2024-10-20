@@ -115,3 +115,15 @@ header a {
     text-align: center;
     
 }
+
+/* ABA RECOMENDAÇÕES */
+
+.recomendacoes{
+    
+    height: 100px;
+    background-image: url("../assets/rascunho.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+}
