@@ -92,7 +92,9 @@ header a {
 }
 
 /* ABA CURIOSIDADES */
+
 .curiosidades{
+    
     height: 100px;
     background-image: url("../assets/fundofinalcuriosidades.jpg");
     background-size: cover;
