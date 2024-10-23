@@ -12,7 +12,7 @@ header{
 body {
 
     padding-top: 12dvh;
-    background-image: url("../assets/fundoiniciofinal.jpg");
+    background-image: url("../assets/fundos/fundoiniciofinal.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -96,19 +96,21 @@ header a {
 .curiosidades{
     
     height: 100px;
-    background-image: url("../assets/fundofinalcuriosidades.jpg");
+    background-image: url("../assets/fundos/fundofinalcuriosidades.jpg");
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
     background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: top center; 
+    background-color: rgba(17,68,72,255);
+
 }
 
-.container-text{
+.inicio{
 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60dvh;
+    height: 70dvh;
     width: 100%;
     color: aliceblue;
     font-size: 45px;
@@ -116,12 +118,82 @@ header a {
     
 }
 
+.container-curiosidades{
+
+
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10rem;
+   
+}
+
+.inicio-curiosidades,
+.box-comoviveram,
+.box-pqdesapareceram,
+.box-comocomiam,
+.box-primeirofossil{
+ 
+    color: aliceblue;
+    font-size: 40px;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.box-curiosidades{
+
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20px;
+
+}
+
+
+.texto-curiosidades{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.container-curiosidades p{
+
+    text-align: center;
+    font-size: xx-large;
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+}
+.container-boxes{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.container-boxes .box-comoviveram, .box-pqdesapareceram, .box-comocomiam{
+
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 30%;
+}
+
 /* ABA RECOMENDAÇÕES */
 
 .recomendacoes{
     
     height: 100px;
-    background-image: url("../assets/fundofinalrecomendacoes.jpg");
+    background-image: url("../assets/fundos/fundofinalrecomendacoes.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -134,7 +206,7 @@ header a {
 .descobertas{
 
     height: 100px;
-    background-image: url("../assets/fundodescobertas\(final\).png");
+    background-image: url("../assets/fundos/fundodescobertas\(final\).png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
