@@ -17,6 +17,7 @@ body {
     background-position: center;
     background-attachment: fixed; 
     background-repeat: no-repeat;
+
 }
 
 header .container{
@@ -124,6 +125,8 @@ header a {
     align-items: center;
     flex-direction: column;
     margin-top: 10rem;
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.6);
    
 }
 
@@ -131,7 +134,8 @@ header a {
 .box-comoviveram,
 .box-pqdesapareceram,
 .box-comocomiam,
-.box-primeirofossil{
+.box-primeirofossil,
+.box-dinossaurosbr{
  
     color: aliceblue;
     font-size: 40px;
@@ -192,8 +196,15 @@ header a {
 
     width: 40%;
     height: 40%;
+    align-self: center;
 
 }
+
+.texto-primeirofossil .imagens {
+    margin-bottom: 25px;
+}
+
+
 
 /* ABA RECOMENDAÇÕES */
 
