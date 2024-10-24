@@ -205,6 +205,13 @@ header a {
 
 }
 
+.imagens-dinosbr{
+
+    width: 30%;
+    height: 30%;
+    align-self: center;
+}
+
 .texto-primeirofossil .imagens {
     margin-bottom: 25px;
 }
