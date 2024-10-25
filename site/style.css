@@ -26,8 +26,10 @@ header .container{
     align-items: center;
     height: 100%;
     width: 95%;
+
     
 }
+
 
 
 header .navbar{
@@ -38,12 +40,14 @@ header .navbar{
     color:aliceblue;
     gap: 12px;
     
-    
 }
+
+
 header .titulo{
     
     font-weight: 800;
     color: aliceblue;
+    transition: 0.3s;
     
 }
 
@@ -51,6 +55,12 @@ header a {
 
     text-decoration: none;
     color:aliceblue;
+    transition: 0.3s;
+}
+
+a:hover{
+
+    font-size: 110%;
 }
 
 .container{
