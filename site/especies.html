@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../assets/skull.png" sizes="16x16">
+    <script src="script.js"></script>
 
     <title>DinoTech | Início</title>
 
@@ -52,6 +53,7 @@
             <h3>Spinosauridae</h3>
         </div>
         <div class="texto-especies">
+            <img class="imagens" src="../assets/imagens/spinosauridae.jpg">
         <p>Os Spinosauridae são uma família de dinossauros terópodes que viveram durante o período Cretáceo, conhecidos principalmente por sua adaptação única a um estilo de vida semiaquático e dieta especializada. Seu membro mais famoso, o Spinosaurus aegyptiacus, destacava-se por sua impressionante vela dorsal, possivelmente usada para regulação térmica, exibição social, ou armazenamento de energia. Esses dinossauros, caracterizados por seus crânios longos e estreitos, semelhantes aos de crocodilos, e dentes cônicos, diferem da maioria dos terópodes carnívoros, como os tiranossaurídeos, por mostrarem adaptações para uma dieta piscívora.
         Fósseis e estudos sobre os espinossaurídeos sugerem que tinham membros dianteiros bem desenvolvidos, com garras poderosas, possivelmente úteis tanto para capturar presas aquáticas quanto para se mover em ambientes aquáticos e costeiros. A estrutura de seus ossos sugere adaptações para a natação e mergulho, o que, combinado com sua morfologia dentária, indica que caçavam peixes e outros animais aquáticos. Além do Spinosaurus, outros gêneros, como Baryonyx e Suchomimus, também compartilham essas características, embora com adaptações menores para o ambiente aquático.
         As pesquisas sobre os espinossaurídeos estão em constante desenvolvimento, e a compreensão de seu comportamento, fisiologia e relação com outros dinossauros continua a evoluir à medida que mais fósseis são descobertos.</p>
@@ -62,6 +64,7 @@
             <h3>Tiranosauridae</h3>
         </div>
         <div class="texto-especies">
+            <img class="imagens" src="../assets/imagens/tyranosauridae.jpg">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem voluptates error quas officia perspiciatis placeat odio sed veniam sunt, commodi quo. Dignissimos a fuga deleniti? Nisi quia ex officiis nulla.</p>
         </div>
     </div>
@@ -70,56 +73,7 @@
             <h3>Dromaeosauridae</h3>
     </div>
         <div class="texto-especies">
+            <img class="imagens" src="../assets/imagens/dromaeosauridae.jpg_large">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut labore, velit natus doloribus sequi magnam deserunt est consequatur nobis dolor dolore sunt laudantium excepturi harum assumenda maxime? Mollitia, dignissimos pariatur.</p>
         </div>
     </div>
-    <script>
-
-        function aparecerspino(){
-    
-            var aparecerspino = document.getElementById('divspino').style.display;
-    
-            if(aparecerspino == 'block'){
-            document.getElementById('divspino').style.display = 'none'
-            
-        }else{
-            document.getElementById('divspino').style.display = 'block'
-            document.getElementById('divtirano').style.display = 'none'
-            document.getElementById('divraptor').style.display = 'none'
-
-    
-            }
-    
-    
-        }
-
-        function aparecertirano(){
-
-            var aparecertirano = document.getElementById('divtirano').style.display;
-
-            if(aparecertirano == 'block'){
-            document.getElementById('divtirano').style.display = 'none'
-
-        }else{
-            document.getElementById('divtirano').style.display = 'block'
-            document.getElementById('divspino').style.display = 'none'
-            document.getElementById('divraptor').style.display = 'none'
-
-            }
-        }
-
-        function aparecerraptor(){
-
-            var aparecerraptor = document.getElementById('divraptor').style.display;
-
-            if(aparecerraptor == 'block'){
-            document.getElementById('divraptor').style.display = 'none'
-        
-        }else{
-            document.getElementById('divraptor').style.display = 'block'
-            document.getElementById('divtirano').style.display = 'none'
-            document.getElementById('divspino').style.display = 'none'
-            }
-    }
-    
-    </script>

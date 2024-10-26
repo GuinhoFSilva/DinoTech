@@ -210,7 +210,7 @@ a:hover{
 }
 
 .imagens{
-
+    
     width: 40%;
     height: 40%;
     align-self: center;
@@ -318,6 +318,7 @@ a:hover{
     transition: 0.3s;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     margin-top: 10rem;
     padding: 20px; 
     background-color: rgba(0, 0, 0, 0.6);
