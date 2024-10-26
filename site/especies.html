@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../assets/skull.png" sizes="16x16">
+
+    <title>DinoTech | Início</title>
+
+</head>
+
+<body class="especies">
+    <header>
+        <div class="container">
+        <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
+           <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curiosidades.html">Curiosidades </a></li>
+            <li class="atual"><a href="especies.html">Espécies</a></li>
+            <li><a href="recomendacoes.html">Recomendações</a></li>
+            <li>|</li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="descobertas.html">Descobertas</a></li>
+            <li><a href="logar.html">Logar</a></li>
+            <li><a href="cadastrar.html">Cadastrar</a></li>
+           </ul>
+        </div>
+    </header>
+    <div class="container-especies">
+        <div class="box-spino"  onclick="aparecerspino('divspino')">
+            <img class="logos" src="../assets/logos/spino.avif"></a>
+            <h4>Spinosauridae</h4>
+            <p>A família Spinosauridae é um grupo de dinossauros terópodes conhecidos por suas adaptações únicas para a vida semiaquática, principalmente durante o período Cretáceo. Caracterizados por seus crânios alongados e semelhantes aos dos crocodilos, esses predadores tinham dentes cônicos, ideais para agarrar peixes, o que sugere uma dieta piscívora. O mais famoso dos espinossaurídeos, o Spinosaurus aegyptiacus, tinha uma imensa "vela" nas costas formada por extensas vértebras, que pode ter ajudado na regulação da temperatura corporal ou em exibições para atrair parceiros. </p>
+        </div>
+        <div id="box" class="box-tirano" onclick="aparecertirano('divtirano')">
+            <img class="logos" src="../assets/logos/tirano.jpg"></a>      
+            <h4>Tyrannosauridae</h4>
+            <p>A família Tyrannosauridae é um grupo de dinossauros terópodes carnívoros que inclui alguns dos predadores mais famosos e temidos do período Cretáceo, como o Tyrannosaurus rex. Esses dinossauros eram bípedes com fortes patas traseiras, braços pequenos e adaptados, e crânios massivos com mandíbulas poderosas, capazes de exercer uma força de mordida impressionante. Vivendo há aproximadamente 68 a 66 milhões de anos, eles ocupavam o topo da cadeia alimentar na América do Norte e na Ásia.</p>
+        </div>
+        <div class="box-raptor" onclick="aparecerraptor('divraptor')"">
+            <img class="logos" src="../assets/logos/raptor.jpg"></a>
+            <h4>Dromaeosauridae</h4>
+            <p>A família Dromaeosauridae inclui dinossauros terópodes ágeis e altamente adaptados para a caça, popularmente conhecidos como "raptores". Esses dinossauros, que viveram durante o período Cretáceo, são caracterizados por sua estrutura leve, longas caudas rígidas e uma garra em forma de foice no segundo dedo de cada pé, usada para capturar e segurar presas. Com membros traseiros robustos, provavelmente eram caçadores rápidos e possivelmente sociais, caçando em grupos em algumas espécies.</p>
+        </div>    
+    </div>
+    <div class="container-aparecer" id="divspino">
+        <div class="titulos-especies">
+            <h3>Spinosauridae</h3>
+        </div>
+        <div class="texto-especies">
+        <p>Os Spinosauridae são uma família de dinossauros terópodes que viveram durante o período Cretáceo, conhecidos principalmente por sua adaptação única a um estilo de vida semiaquático e dieta especializada. Seu membro mais famoso, o Spinosaurus aegyptiacus, destacava-se por sua impressionante vela dorsal, possivelmente usada para regulação térmica, exibição social, ou armazenamento de energia. Esses dinossauros, caracterizados por seus crânios longos e estreitos, semelhantes aos de crocodilos, e dentes cônicos, diferem da maioria dos terópodes carnívoros, como os tiranossaurídeos, por mostrarem adaptações para uma dieta piscívora.
+        Fósseis e estudos sobre os espinossaurídeos sugerem que tinham membros dianteiros bem desenvolvidos, com garras poderosas, possivelmente úteis tanto para capturar presas aquáticas quanto para se mover em ambientes aquáticos e costeiros. A estrutura de seus ossos sugere adaptações para a natação e mergulho, o que, combinado com sua morfologia dentária, indica que caçavam peixes e outros animais aquáticos. Além do Spinosaurus, outros gêneros, como Baryonyx e Suchomimus, também compartilham essas características, embora com adaptações menores para o ambiente aquático.
+        As pesquisas sobre os espinossaurídeos estão em constante desenvolvimento, e a compreensão de seu comportamento, fisiologia e relação com outros dinossauros continua a evoluir à medida que mais fósseis são descobertos.</p>
+        </div>
+    </div>
+    <div class="container-aparecer" id="divtirano">
+        <div class="titulos-especies">
+            <h3>Tiranosauridae</h3>
+        </div>
+        <div class="texto-especies">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem voluptates error quas officia perspiciatis placeat odio sed veniam sunt, commodi quo. Dignissimos a fuga deleniti? Nisi quia ex officiis nulla.</p>
+        </div>
+    </div>
+    <div class="container-aparecer" id="divraptor">
+        <div class="titulos-especies">
+            <h3>Dromaeosauridae</h3>
+    </div>
+        <div class="texto-especies">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut labore, velit natus doloribus sequi magnam deserunt est consequatur nobis dolor dolore sunt laudantium excepturi harum assumenda maxime? Mollitia, dignissimos pariatur.</p>
+        </div>
+    </div>
+    <script>
+
+        function aparecerspino(){
+    
+            var aparecerspino = document.getElementById('divspino').style.display;
+    
+            if(aparecerspino == 'block'){
+            document.getElementById('divspino').style.display = 'none'
+            
+        }else{
+            document.getElementById('divspino').style.display = 'block'
+            document.getElementById('divtirano').style.display = 'none'
+            document.getElementById('divraptor').style.display = 'none'
+
+    
+            }
+    
+    
+        }
+
+        function aparecertirano(){
+
+            var aparecertirano = document.getElementById('divtirano').style.display;
+
+            if(aparecertirano == 'block'){
+            document.getElementById('divtirano').style.display = 'none'
+
+        }else{
+            document.getElementById('divtirano').style.display = 'block'
+            document.getElementById('divspino').style.display = 'none'
+            document.getElementById('divraptor').style.display = 'none'
+
+            }
+        }
+
+        function aparecerraptor(){
+
+            var aparecerraptor = document.getElementById('divraptor').style.display;
+
+            if(aparecerraptor == 'block'){
+            document.getElementById('divraptor').style.display = 'none'
+        
+        }else{
+            document.getElementById('divraptor').style.display = 'block'
+            document.getElementById('divtirano').style.display = 'none'
+            document.getElementById('divspino').style.display = 'none'
+            }
+    }
+    
+    </script>
