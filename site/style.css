@@ -355,3 +355,13 @@ a:hover{
     height: 33rem;
     
 }
+
+.titulos-especies h4{
+
+    margin-top: 25px;
+    margin-bottom: 2px;
+}
+
+h4{
+    color:aliceblue;
+}
