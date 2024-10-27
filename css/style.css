@@ -334,7 +334,7 @@ a:hover{
     
 }
 
-.box-spino, .box-tirano, .box-raptor{
+.box-card{
     
     color: aliceblue;
     overflow: hidden;
@@ -349,7 +349,7 @@ a:hover{
     
 }
 
-.box-spino:hover, .box-tirano:hover, .box-raptor:hover{
+.box-card:hover{
 
     width: 30rem;
     height: 33rem;

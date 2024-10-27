@@ -6,9 +6,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../assets/skull.png" sizes="16x16">
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
 
     <title>DinoTech | Início</title>
 
@@ -32,23 +32,43 @@
         </div>
     </header>
     <div class="container-especies">
-        <div class="box-spino"  onclick="aparecerspino('divspino')">
+        <div class="box-card"  onclick="aparecerceratops('divceratops')">
+            <img class="logos" src="../assets/logos/Ceratopsidae.jpg"></a>
+            <h4>Ceratopsidae</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas dolor qui, sit modi ipsa numquam accusantium officiis illo aperiam corporis doloribus, dolore ratione, voluptatibus delectus et hic autem? Necessitatibus, quaerat?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores iste repellat dignissimos sed beatae modi sunt soluta voluptatibus natus nisi, doloribus temporibus hic illum, totam ullam veniam aperiam. Sunt, quod. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus aut autem ex officia accusamus veniam! Enim dolor animi exercitationem voluptate vel dolorem impedit dolore deleniti iure. Veritatis eius velit similique.</p>
+        </div>
+        <div class="box-card"  onclick="aparecerspino('divspino')">
             <img class="logos" src="../assets/logos/spino.avif"></a>
             <h4>Spinosauridae</h4>
             <p>A família Spinosauridae é um grupo de dinossauros terópodes conhecidos por suas adaptações únicas para a vida semiaquática, principalmente durante o período Cretáceo. Caracterizados por seus crânios alongados e semelhantes aos dos crocodilos, esses predadores tinham dentes cônicos, ideais para agarrar peixes, o que sugere uma dieta piscívora. O mais famoso dos espinossaurídeos, o Spinosaurus aegyptiacus, tinha uma imensa "vela" nas costas formada por extensas vértebras, que pode ter ajudado na regulação da temperatura corporal ou em exibições para atrair parceiros. </p>
         </div>
-        <div id="box" class="box-tirano" onclick="aparecertirano('divtirano')">
+        <div class="box-card" onclick="aparecertirano('divtirano')">
             <img class="logos" src="../assets/logos/tirano.jpg"></a>      
             <h4>Tyrannosauridae</h4>
             <p>A família Tyrannosauridae é um grupo de dinossauros terópodes carnívoros que inclui alguns dos predadores mais famosos e temidos do período Cretáceo, como o Tyrannosaurus rex. Esses dinossauros eram bípedes com fortes patas traseiras, braços pequenos e adaptados, e crânios massivos com mandíbulas poderosas, capazes de exercer uma força de mordida impressionante. Vivendo há aproximadamente 68 a 66 milhões de anos, eles ocupavam o topo da cadeia alimentar na América do Norte e na Ásia.</p>
         </div>
-        <div class="box-raptor" onclick="aparecerraptor('divraptor')"">
+        <div class="box-card" onclick="aparecerraptor('divraptor')">
             <img class="logos" src="../assets/logos/raptor.jpg"></a>
             <h4>Dromaeosauridae</h4>
             <p>A família Dromaeosauridae inclui dinossauros terópodes ágeis e altamente adaptados para a caça, popularmente conhecidos como "raptores". Esses dinossauros, que viveram durante o período Cretáceo, são caracterizados por sua estrutura leve, longas caudas rígidas e uma garra em forma de foice no segundo dedo de cada pé, usada para capturar e segurar presas. Com membros traseiros robustos, provavelmente eram caçadores rápidos e possivelmente sociais, caçando em grupos em algumas espécies.</p>
-        </div>    
+        </div>
+        <div class="box-card" onclick="aparecerbrach('divbrach')">
+            <img class="logos" src="../assets/logos/brachiosaurus.jpg"></a>
+            <h4>Brachiosauridae</h4>
+            <p>Brachiosauridae é uma família de dinossauros saurópodes, herbívoros que viveram durante o Jurássico, e inclui animais do gênero Brachiosaurus. Possuem patas dianteiras mais longas que as traseiras, e pescoço longo e quase vertical.</p>
+        </div>   
     </div>
-    <div class="container-aparecer" id="divspino">
+
+<div class="container-aparecer" id="divceratops">
+        <div class="titulos-especies">
+            <h3>Ceratopsidae</h3>
+        </div>
+        <div class="texto-especies">
+            <img class="imagens" src="../assets/imagens/spinosauridae.jpg">
+        </div>
+</div>
+
+<div class="container-aparecer" id="divspino">
         <div class="titulos-especies">
             <h3>Spinosauridae</h3>
         </div>
@@ -91,8 +111,9 @@
             <img class="imagens" src="../assets/imagens/irritatorrepresentado.jpg">
             <p>Com relação à sua dieta e hábitos de caça, é provável que o Irritator se especializasse na captura de peixes, semelhante ao Spinosaurus. O formato do seu crânio sugere que ele possuía dentes adaptados para agarrar presas aquáticas, embora a sua habilidade de caça em terra ainda seja uma área de discussão entre os cientistas. Os especialistas acreditam que, assim como outros espinossaurídeos, o Irritator poderia ter adotado estratégias de emboscada em ambientes aquáticos, utilizando a vegetação para se esconder antes de atacar.</p>
         </div>
-    </div>
-    <div class="container-aparecer" id="divtirano">
+</div>
+
+<div class="container-aparecer" id="divtirano">
         <div class="titulos-especies">
             <h3>Tiranosauridae</h3>
         </div>
@@ -142,8 +163,9 @@
             <img class="imagens" src="../assets/imagens/Albertosaurusrepresentação.webp">
             <p>O Albertosaurus era um predador com dentes afiados, tipicamente serrilhados em uma borda para auxiliar no corte de carne e ossos, utilizando uma ação de "agarrar e rasgar". Seu porte moderado, aliado ao ambiente menos denso em vegetação, sugere que poderia caçar tanto emboscando quanto perseguindo presas em longas corridas, atingindo velocidades de até 30 km/h. Além disso, sua cauda lhe proporcionava agilidade, ajudando-o a mudar de direção em alta velocidade. Estudos indicam que Albertosaurus poderia atacar presas de tamanho similar ou maior com uma técnica de "mordida e corte", em vez de uma matança rápida. Essa estratégia poderia ter sido útil ao caçar grandes saurópodes. Evidências fósseis, incluindo a descoberta de mais de 20 espécimes juntos, apontam para a possibilidade de que caçava em grupo.</p>
         </div>
-    </div>
-    <div class="container-aparecer" id="divraptor">
+</div>
+
+<div class="container-aparecer" id="divraptor">
         <div class="titulos-especies">
             <h3>Dromaeosauridae</h3>
     </div>
@@ -187,4 +209,14 @@
             <img class="imagens" src="../assets/imagens/deinonicorepresentado.jpg">
             <p>Os hábitos de caça do Deinonychus são objeto de discussão entre paleontólogos. Acredita-se que ele era um caçador oportunista, provavelmente atacando presas menores e possivelmente colaborando em grupo, como sugerido por algumas evidências fósseis. Enquanto algumas representações o mostram como um predador ágil, pesquisas recentes indicam que suas estratégias de caça podem ter incluído emboscadas, aproveitando sua camuflagem e táticas de grupo para capturar presas de maneira eficaz.</p>
         </div>
+</div>
+
+<div class="container-aparecer" id="divbrach">
+        <div class="titulos-especies">
+        <h3>Brachiosauridae</h3>
     </div>
+    <div class="texto-especies">
+        <img class="imagens" src="../assets/imagens/brachiosauridae.webp">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum maxime possimus iusto repellat hic ipsa culpa ea blanditiis consectetur eius fuga modi quod obcaecati tempore a sit, excepturi dolorem. Deserunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quos facilis, quam alias amet iusto molestias temporibus harum saepe blanditiis fugit perspiciatis reprehenderit iste laboriosam iure eum ratione totam doloribus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, enim error? Eum, doloribus. Dolorum, vitae, illo quas eius dolor ut tenetur iure, praesentium placeat facilis est adipisci maiores beatae totam!</p>
+    </div>
+</div>
