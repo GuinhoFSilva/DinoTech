@@ -260,7 +260,7 @@ a:hover{
     padding-inline: 10px;
     margin-left: 3%;
     transition: 0.3s;
-    
+    overflow: hidden;
 }
 
 .box-recomendacoes:hover{
