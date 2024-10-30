@@ -245,6 +245,7 @@ a:hover{
     display: flex;
     height: 40rem;
     justify-content: center;
+    margin-right: 3%;
     align-items: center;
     
 }
