@@ -249,7 +249,7 @@ a:hover{
     
 }
 
-.box-jurassic, .box-abc, .box-documentario{
+.box-recomendacoes{
     
     color: aliceblue;
     background-color: rgba(0, 0, 0, 0.554);
@@ -263,7 +263,7 @@ a:hover{
     
 }
 
-.box-jurassic:hover, .box-abc:hover, .box-documentario:hover{
+.box-recomendacoes:hover{
 
     width: 30rem;
     height: 33rem;
