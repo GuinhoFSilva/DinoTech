@@ -109,10 +109,7 @@ a:hover{
     height: 100px;
     background-image: url("../assets/fundos/fundofinalcuriosidades.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
     background-position: top center; 
-    background-color: rgba(17,68,72,255);
 
 }
 
@@ -353,8 +350,8 @@ a:hover{
 
 .box-card:hover{
 
-    width: 30rem;
-    height: 33rem;
+    width: 40rem;
+    height: 37rem;
     cursor: pointer;
 }
 
