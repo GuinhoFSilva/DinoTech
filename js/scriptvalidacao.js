@@ -59,36 +59,29 @@
     }
 
 
-    function cadastrar(){
-        var senha =  document.getElementById('iptsenha').value;
-        var confirmacaoSenha =  document.getElementById('iptconfirma').value;
-        var mensagemErro = ""
-        
-            if(confirmacaoSenha != senha){
-                alert(`As senhas não coicidem`)
-            }
-
-        divmsgerro.innerHTML = mensagemErro
-
-}
-
+    
     function cadastrarEmail(){
-        var email = document.getElementById('iptemail').value;
-        var arroba = email.includes('@');
-        var ponto = email.includes('.');
-        var tamanhoEmail = email.length;
-        var mensagemErro = ""
-
+    var email = document.getElementById('iptemail').value;
+    var arroba = email.includes('@');
+    var ponto = email.includes('.');
+    var espaco = email.includes(' ')
+    var tamanhoEmail = email.length;
+    var mensagemErro = ""
+        
+        
         if(!arroba){
             mensagemErro += `O email deve incluir '@'<br>`
         }
         if(!ponto){
             mensagemErro += `O email deve incluir ponto '.'<br>`
         }
+        if(espaco){
+            mensagemErro += `O email não pode conter espaços<br>`
+        }
         if (tamanhoEmail < 5){
             mensagemErro += `O email está muito curto! O email deve ter no mínimo 5 caracteres<br>`
         }else if(tamanhoEmail > 100){
-            mensagemErro = `O email está muito longo! O email deve ter no máximo 100 caracteres<br>`
+            mensagemErro += `O email está muito longo! O email deve ter no máximo 100 caracteres<br>`
         }
 
 
@@ -97,3 +90,31 @@
         divmsgerro.innerHTML = mensagemErro
 
     }
+    
+    function cadastrar(){
+        var senha =  document.getElementById('iptsenha').value;
+        var confirmacaoSenha =  document.getElementById('iptconfirma').value;
+        var email = document.getElementById('iptemail').value;
+        var usuario = document.getElementById('iptnome').value;
+        var mensagemErro = ""
+        
+
+            if(!usuario){
+                mensagemErro += `Insira um nome de usuário<br>`
+            }
+            if(!email){
+                mensagemErro += `Insira um email válido<br>`
+            }
+            if(!senha){
+                mensagemErro += `Insira uma senha<br>`
+            }
+            if(!confirmacaoSenha){
+                mensagemErro += `Confirme a senha<br>`
+            }
+            if(confirmacaoSenha != senha){
+                mensagemErro += `As senhas não coicidem`
+            }
+
+        divmsgerro.innerHTML = mensagemErro
+
+}
