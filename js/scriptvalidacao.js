@@ -1,5 +1,21 @@
     var validacaosenha = false;
     var validacaoemail = false;
+    var validacaonome = false
+
+    function cadastrarNome(){
+    var nome = document.getElementById('iptnome').value;
+    var tamanhoNome = nome.length;
+    var mensagemErro = "";
+
+        if (tamanhoNome < 4){
+            mensagemErro += `O nome de usuário precisa ter mais de 4 caracteres`
+        }else if(tamanhoNome > 45){
+            mensagemErro += `O nome de usuário precisa ter no máximo 45 caracteres`
+        }else{
+            validacaonome = true;
+        }
+
+    }
     
     function cadastrarSenha(){
     var senha =  document.getElementById('iptsenha').value;
@@ -105,12 +121,12 @@
         var senha =  document.getElementById('iptsenha').value;
         var confirmacaoSenha =  document.getElementById('iptconfirma').value;
         var email = document.getElementById('iptemail').value;
-        var usuario = document.getElementById('iptnome').value;
+        var nome = document.getElementById('iptnome').value;
         var cadastro = true;
         var mensagemErro = ""
         
 
-            if(!usuario){
+            if(!nome){
                 mensagemErro += `Insira um nome de usuário<br>`
                 cadastro = false;
             }
@@ -130,7 +146,7 @@
                 mensagemErro += `As senhas não coicidem`
                 cadastro = false;
             }
-            if(validacaoemail && validacaosenha && cadastro){
+            if(validacaonome && validacaoemail && validacaosenha && cadastro){
                 alert("CADASTRO REALIZADO COM SUCESSO")
             }
 
