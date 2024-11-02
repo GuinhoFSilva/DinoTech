@@ -69,5 +69,31 @@
             }
 
         divmsgerro.innerHTML = mensagemErro
-    }
 
+}
+
+    function cadastrarEmail(){
+        var email = document.getElementById('iptemail').value;
+        var arroba = email.includes('@');
+        var ponto = email.includes('.');
+        var tamanhoEmail = email.length;
+        var mensagemErro = ""
+
+        if(!arroba){
+            mensagemErro += `O email deve incluir '@'<br>`
+        }
+        if(!ponto){
+            mensagemErro += `O email deve incluir ponto '.'<br>`
+        }
+        if (tamanhoEmail < 5){
+            mensagemErro += `O email está muito curto! O email deve ter no mínimo 5 caracteres<br>`
+        }else if(tamanhoEmail > 100){
+            mensagemErro = `O email está muito longo! O email deve ter no máximo 100 caracteres<br>`
+        }
+
+
+
+
+        divmsgerro.innerHTML = mensagemErro
+
+    }
