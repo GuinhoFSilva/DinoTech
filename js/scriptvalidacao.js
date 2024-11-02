@@ -1,3 +1,5 @@
+    var validacaosenha = false;
+    var validacaoemail = false;
     
     function cadastrarSenha(){
     var senha =  document.getElementById('iptsenha').value;
@@ -10,8 +12,8 @@
     var maiuscula = false;
     var espaco = false;
 
-    if(senha == ""){
-        mensagemErro = `Preencha o campo para continuar<br>`
+    if(!senha){
+        mensagemErro = `Insira uma senha para continuar<br>`
 
     }
 
@@ -53,13 +55,11 @@
     if(espaco){
         mensagemErro += `A senha não pode incluir espaços em branco<br>`
     }
-
-
-    if(mensagemErro == ""){
-    }else{
-        divmsgerro.innerHTML = mensagemErro
+    if(especiais && numero && minuscula && maiuscula && !espaco){
+        validacaosenha = true;
     }
 
+        divmsgerro.innerHTML = mensagemErro
     }
 
 
@@ -70,9 +70,12 @@
     var ponto = email.includes('.');
     var espaco = email.includes(' ')
     var tamanhoEmail = email.length;
-    var mensagemErro = ""
+    var mensagemErro = "";
+    var tamanhoValido = false;
         
-        
+        if(!email){
+            mensagemErro += `Insira um email válido`
+        }
         if(!arroba){
             mensagemErro += `O email deve incluir '@'<br>`
         }
@@ -86,15 +89,15 @@
             mensagemErro += `O email está muito curto! O email deve ter no mínimo 5 caracteres<br>`
         }else if(tamanhoEmail > 100){
             mensagemErro += `O email está muito longo! O email deve ter no máximo 100 caracteres<br>`
-        }
-
-
-
-        if(mensagemErro == ""){
-
         }else{
-            divmsgerro.innerHTML = mensagemErro
+            tamanhoValido = true;
         }
+        if(arroba && ponto && !espaco && tamanhoValido){
+            validacaoemail = true;
+        }
+
+
+            divmsgerro.innerHTML = mensagemErro
 
     }
     
@@ -103,30 +106,35 @@
         var confirmacaoSenha =  document.getElementById('iptconfirma').value;
         var email = document.getElementById('iptemail').value;
         var usuario = document.getElementById('iptnome').value;
+        var cadastro = true;
         var mensagemErro = ""
         
 
             if(!usuario){
                 mensagemErro += `Insira um nome de usuário<br>`
+                cadastro = false;
             }
             if(!email){
                 mensagemErro += `Insira um email válido<br>`
+                cadastro = false;
             }
             if(!senha){
                 mensagemErro += `Insira uma senha<br>`
+                cadastro = false;
             }
             if(!confirmacaoSenha){
                 mensagemErro += `Confirme a senha<br>`
+                cadastro = false;
             }
             if(confirmacaoSenha != senha){
                 mensagemErro += `As senhas não coicidem`
+                cadastro = false;
+            }
+            if(validacaoemail && validacaosenha && cadastro){
+                alert("CADASTRO REALIZADO COM SUCESSO")
             }
 
-            if(mensagemErro == ""){
-
-            }else{
                 divmsgerro.innerHTML = mensagemErro
-            }
     
 
 }
