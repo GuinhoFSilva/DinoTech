@@ -54,7 +54,11 @@
         mensagemErro += `A senha não pode incluir espaços em branco<br>`
     }
 
-    divmsgerro.innerHTML = mensagemErro
+
+    if(mensagemErro == ""){
+    }else{
+        divmsgerro.innerHTML = mensagemErro
+    }
 
     }
 
@@ -86,8 +90,11 @@
 
 
 
+        if(mensagemErro == ""){
 
-        divmsgerro.innerHTML = mensagemErro
+        }else{
+            divmsgerro.innerHTML = mensagemErro
+        }
 
     }
     
@@ -115,6 +122,11 @@
                 mensagemErro += `As senhas não coicidem`
             }
 
-        divmsgerro.innerHTML = mensagemErro
+            if(mensagemErro == ""){
+
+            }else{
+                divmsgerro.innerHTML = mensagemErro
+            }
+    
 
 }
