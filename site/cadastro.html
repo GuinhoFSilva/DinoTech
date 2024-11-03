@@ -30,20 +30,30 @@
 
         <div class="card">
             <div class="info">
+            <div class="titulo-cadastro">
             <h3>Cadastro</h3><br>
+            </div>
+            <div class="card-infos">
+            <div class="info-cadastro">
             <h5>Informe seu nome:</h5><br>
-            <input class="inputcadastro" id="iptnome" type="text" oninput="cadastrarNome()"><br>
-
+            </div>
+            <input class="input-cadastro" id="iptnome" type="text" oninput="cadastrarNome()"><br>
+            <div class="info-cadastro">
             <h5>Digite seu email:</h5><br>
-            <input class="inputcadastro" id="iptemail" type="text" placeholder="email@example.com" oninput="cadastrarEmail()"><br>
-
+            </div>
+            <input class="input-cadastro" id="iptemail" type="text" placeholder="email@example.com" oninput="cadastrarEmail()"><br>
+            <div class="info-cadastro"> 
             <h5>Digite sua senha:</h5><br>
-            <input class="inputcadastro" id="iptsenha" type="password" placeholder="********" oninput="cadastrarSenha()"><br>
-            
+            </div>
+            <input class="input-cadastro" id="iptsenha" type="password" placeholder="********" oninput="cadastrarSenha()"><br>
+            <div class="info-cadastro"> 
             <h5>Confirme a senha:</h5><br>
-            <input class="inputcadastro" id="iptconfirma" type="password" placeholder="********"><br>
-            
+            </div>
+            <input class="input-cadastro" id="iptconfirma" type="password" placeholder="********"><br>
+            </div>
+            <div class="botao-cadastro">
             <button class="botao" onclick="cadastrar()">Cadastrar</button>
+            </div>
             <div id="divmsgerro"></div>
             <p>Já possuí um cadastro? <a href="login.html">Ir para a página de login</a></p>
             </div>
