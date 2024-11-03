@@ -482,11 +482,26 @@ h5{
     font-weight: 700;
     border: 0;
     width: 11rem;
-    font-size: x-large;
+    font-size: 25px;
     background-color: rgba(4,21,21, 0.554);
     color:#c3eef4;
     text-align: center;
     border-radius: 2rem;
+    transition: 0.3s;
+
+}
+
+.botao-cadastrar:hover{
+
+    height: 40px;
+    width: 12rem;
+    font-size: 30px;
+}
+
+.botao-cadastrar:active{
+
+    background-color: #c3eef4;
+    color: rgba(4,21,21, 0.554);
 
 }
 
@@ -543,8 +558,8 @@ h5{
 .container-login{
 
     display: flex;
-    justify-content: flex-end;
-    margin-right: 32px;
+    justify-content: flex-start;
+    margin-left: 32px;
     align-items: center;
     
 }
@@ -591,11 +606,12 @@ h5{
     font-weight: 700;
     border: 0;
     width: 11rem;
-    font-size: x-large;
+    font-size: 25px;
     background-color: rgb(26, 22, 18);
     color:#b6a794;
     text-align: center;
     border-radius: 2rem;
+    transition: 0.3s;
 
 }
 
@@ -605,6 +621,20 @@ h5{
     height: 6rem;
     justify-content: center;
     align-items: center;
+
+}
+
+.botao-logar:hover{
+
+    height: 40px;
+    width: 12rem;
+    font-size: 30px;
+}
+
+.botao-logar:active{
+
+    background-color: #b6a794;
+    color: rgb(26, 22, 18);
 
 }
 
