@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <select id="selecionarDino">
+        <option value="#">Selecione uma opção</option>
+        <option value="Tiranossauro">Tiranossauro Rex</option>
+        <option value="Velociraptor">Velociraptor</option>
+        <option value="Triceratops">Triceratops</option>
+        <option value="Espinossauro">Espinossauro</option>
+       </select>
+
+       <button onclick="ver()">Ver velocidade</button>
+
+       <div id="divmsg"></div>
+
+</body>
+</html>
+<script>
+
+    function ver(){
+        var dino = selecionarDino.value;
+        var gravidade = 9.8;
+        var passo = 0;
+        var quadril = 0;
+        
+        if(dino == "Tiranossauro"){
+            passo = 3.75
+            quadril = 4
+        }
+        
+        var velocidade = ((gravidade * passo) / quadril).toFixed(2);
+
+        divmsg.innerHTML = `a velocidade estimada do ${dino} é de ${velocidade} Metros por segundo, o que dá um total de ${(velocidade * 3.6).toFixed(2)} Km/h`
+
+    }
+
+
+
+</script>
