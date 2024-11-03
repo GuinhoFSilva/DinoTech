@@ -58,7 +58,7 @@ header a {
     transition: 0.3s;
 }
 
-a:hover{
+header a:hover{
 
     font-size: 110%;
 }
@@ -490,6 +490,21 @@ h5{
 
 }
 
+.link-login a{
+
+    color:white;
+    transition: 0.3s;
+
+}
+
+.link-login a:hover{
+
+    color: #abf5ff;
+    font-size: 110%;
+
+
+}
+
 /* LOGIN */
 
 
@@ -518,11 +533,18 @@ h5{
 
 }
 
+.card-login:hover{
+
+    width: 38rem;
+    height: 45rem;
+
+}
+
 .container-login{
 
     display: flex;
-    justify-content: flex-start;
-    margin-left: 32px;
+    justify-content: flex-end;
+    margin-right: 32px;
     align-items: center;
     
 }
@@ -583,5 +605,20 @@ h5{
     height: 6rem;
     justify-content: center;
     align-items: center;
+
+}
+
+.link-cadastro a{
+
+    color:white;
+    transition: 0.3s;
+
+}
+
+.link-cadastro a:hover{
+
+    color: #fff6a4;
+    font-size: 110%;
+
 
 }
