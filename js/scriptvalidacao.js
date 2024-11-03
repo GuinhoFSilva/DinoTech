@@ -154,5 +154,4 @@
 
                 divmsgerro.innerHTML = mensagemErro
     
-
 }
