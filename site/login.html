@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../assets/skull.png" sizes="16x16">
+    <script src="../js/scriptvalidacao.js"></script>
+    <title>DinoTech | Cadastro</title>
+
+</head>
+<body class="login">
+    <header>
+        <div class="container">
+        <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
+           <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curiosidades.html">Curiosidades </a></li>
+            <li><a href="especies.html">Espécies</a></li>
+            <li><a href="recomendacoes.html">Recomendações</a></li>
+            <li>|</li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="descobertas.html">Descobertas</a></li>
+            <li class="atual"><a href="#">Logar</a></li>
+            <li><a href="cadastro.html">Cadastrar</a></li>
+           </ul>
+        </div>
+    </header>
+    <div class="container-login">
+
+        <div class="card-login">
+            <div class="info">
+            <div class="titulo-login">
+            <h3>Login</h3><br>
+            </div>
+            <div class="card-infos">
+            <div class="info-login">
+            <h5>Digite seu nome:</h5><br>
+            </div>
+            <input class="input-login" id="iptnome" type="text" oninput="cadastrarNome()"><br>
+            <div class="info-login">
+            <h5>Digite seu email:</h5><br>
+            </div>
+            <input class="input-login" id="iptemail" type="text" placeholder="email@example.com" oninput="cadastrarEmail()"><br>
+            <div class="info-login"> 
+            <h5>Digite sua senha:</h5><br>
+            </div>
+            <input class="input-login" id="iptsenha" type="password" placeholder="********" oninput="cadastrarSenha()"><br>
+            <div class="botao-login">
+            <button class="botao" onclick="logar()">Logar</button>
+            </div>
+            <div id="divmsgerronome"></div>
+            <div id="divmsgerroemail"></div>
+            <div id="divmsgerrosenha"></div>
+            <p>Já possuí um cadastro? <a href="login.html">Ir para a página de login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
