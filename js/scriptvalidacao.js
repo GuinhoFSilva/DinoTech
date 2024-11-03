@@ -15,6 +15,8 @@
             validacaonome = true;
         }
 
+        divmsgerronome.innerHTML = mensagemErro
+
     }
     
     function cadastrarSenha(){
@@ -75,7 +77,7 @@
         validacaosenha = true;
     }
 
-        divmsgerro.innerHTML = mensagemErro
+        divmsgerrosenha.innerHTML = mensagemErro
     }
 
 
@@ -113,7 +115,7 @@
         }
 
 
-            divmsgerro.innerHTML = mensagemErro
+            divmsgerroemail.innerHTML = mensagemErro
 
     }
     
