@@ -313,7 +313,6 @@ header a:hover{
 .container-aparecer{
 
     display: none;
-    transition: 0.3s;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -345,7 +344,7 @@ header a:hover{
     font-size: 20px;
     padding-inline: 10px;
     margin-left: 3%;
-    transition: 0.3s;
+    transition: 0.4s;
     
 }
 
