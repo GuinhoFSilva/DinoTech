@@ -331,7 +331,7 @@ header a:hover{
     font-size: 20px;
     padding-inline: 10px;
     margin-left: 3%;
-    transition: 0;
+    transition: 0.4s;
     
 }
 
