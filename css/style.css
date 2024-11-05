@@ -399,12 +399,13 @@ h4{
 
 .texto-descobertas{
 
-    color: aliceblue;
-    font-size: 40px;
     text-align: center;
-    margin-left: 2%;
-    margin-right: 2%;
-
+    font-size: xx-large;
+    color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;   
 }
 
 
@@ -538,14 +539,12 @@ h5{
     height: 40px;
     width: 12rem;
     font-size: 30px;
-}
-
-.botao-cadastrar:active{
-
     background-color: #c3eef4;
     color: rgba(4,21,21, 0.554);
 
 }
+
+
 
 .link-login a{
 
@@ -671,10 +670,6 @@ h5{
     height: 40px;
     width: 12rem;
     font-size: 30px;
-}
-
-.botao-logar:active{
-
     background-color: #b6a794;
     color: rgb(26, 22, 18);
 
