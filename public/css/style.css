@@ -544,6 +544,14 @@ h5{
 
 }
 
+.botao-cadastrar:active{
+
+    transition: 0s;
+    background-color: rgba(4,21,21, 0.554);
+    color:#c3eef4;
+
+}
+
 
 
 .link-login a{
@@ -672,6 +680,14 @@ h5{
     font-size: 30px;
     background-color: #b6a794;
     color: rgb(26, 22, 18);
+
+}
+
+.botao-logar:active{
+
+    transition: 0s;
+    background-color: rgb(26, 22, 18);
+    color:#b6a794;
 
 }
 

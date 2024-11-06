@@ -1,6 +1,6 @@
     var validacaosenha = false;
     var validacaoemail = false;
-    var validacaonome = false
+    var validacaonome = false;
 
     function cadastrarNome(){
     var nome = document.getElementById('iptnome').value;
@@ -150,8 +150,85 @@
             }
             if(validacaonome && validacaoemail && validacaosenha && cadastro){
                 alert("CADASTRO REALIZADO COM SUCESSO")
-            }
-
-                divmsgerro.innerHTML = mensagemErro
-    
+                
+                
+                fetch("/usuarios/cadastrar", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                      // Agora vá para o arquivo routes/usuario.js
+                      nomeServer: nome,
+                      emailServer: email,
+                      senhaServer: senha
+                    }),
+                })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+                    
+                    if (resposta.ok) {                          
+                          setTimeout(() => {
+                              window.location = "login.html";
+                            }, "2000");
+                        }
+                    })
+                    
+                    return false;
+                }else{
+                    divmsgerro.innerHTML = mensagemErro;
+                } // FUNCIONOUUUUUUUUUUUUUUUUUUUUUUUUUUUU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DEUS É BOM (e o diabo é ruim)
 }
+
+    function logar(){
+        var email = document.getElementById('iptemail').value;
+        var senha =  document.getElementById('iptsenha').value;
+        var mensagemErro = "";
+        var login = true;
+
+        if(!email || !senha){
+            mensagemErro = "Erro! Informe ambos os campos"
+            login = false;
+        }
+        if(login){
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            })
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+    
+                if (resposta.ok) {
+                    console.log("resposta: ", resposta);
+    
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+                        window.location = "index.html";
+    
+                    });
+    
+                } else {
+    
+                    divmsgerro.innerHTML = mensagemErro;
+                }
+    
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+    
+            return false;
+        }
+        }
+
+                
