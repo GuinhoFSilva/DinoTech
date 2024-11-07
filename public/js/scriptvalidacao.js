@@ -52,7 +52,7 @@
                 minuscula = true;
             }if (senha[i].toLowerCase() != senha[i]){
                 maiuscula = true;
-            }if(senha[i].includes(" ")){
+            }if(senha[i].includes(' ')){
                 espaco = true;
             }
         }
@@ -151,7 +151,6 @@
             if(validacaonome && validacaoemail && validacaosenha && cadastro){
                 alert("CADASTRO REALIZADO COM SUCESSO")
                 
-                
                 fetch("/usuarios/cadastrar", {
                     method: "POST",
                     headers: {
@@ -170,7 +169,7 @@
                     
                     if (resposta.ok) {                          
                           setTimeout(() => {
-                              window.location = "login.html";
+                              window.location = "./login.html";
                             }, "2000");
                         }
                     })
@@ -192,6 +191,8 @@
             login = false;
         }
         if(login){
+            console.log("ESTOU NO IF DO LOGIN!")
+
             fetch("/usuarios/autenticar", {
                 method: "POST",
                 headers: {
@@ -214,7 +215,7 @@
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.id;
-                        window.location = "index.html";
+                        window.location = "./index.html";
     
                     });
     
