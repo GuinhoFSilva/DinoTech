@@ -184,14 +184,14 @@
         var email = document.getElementById('iptemail').value;
         var senha =  document.getElementById('iptsenha').value;
         var mensagemErro = "";
-        var login = true;
 
         if(!email || !senha){
             mensagemErro = "Erro! Informe ambos os campos"
-            login = false;
         }
-        if(login){
-            console.log("ESTOU NO IF DO LOGIN!")
+
+
+            console.log("FORM LOGIN: ", email);
+            console.log("FORM SENHA: ", senha);
 
             fetch("/usuarios/autenticar", {
                 method: "POST",
@@ -201,26 +201,24 @@
                 body: JSON.stringify({
                     emailServer: email,
                     senhaServer: senha
-                })
-            })
-            .then(function (resposta) {
-                console.log("ESTOU NO THEN DO entrar()!")
+                }),
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!", resposta)
     
                 if (resposta.ok) {
-                    console.log("resposta: ", resposta);
-    
                     resposta.json().then(json => {
                         console.log(json);
-                        console.log(JSON.stringify(json));
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.ID_USUARIO = json.id;
-                        window.location = "./index.html";
+                        sessionStorage.ID_USUARIO = json.idUsuario;
+
+
+                        window.location.href = "index.html";
     
                     });
     
                 } else {
-    
+                    console.log("Houve um erro ao tentar realizar o login!");
                     divmsgerro.innerHTML = mensagemErro;
                 }
     
@@ -229,7 +227,6 @@
             })
     
             return false;
-        }
         }
 
                 
