@@ -352,9 +352,9 @@ h4{
     color:aliceblue;
 }
 
-/* ABA DESCOBERTAS */
+/* ABA extincao */
 
-.descobertas{
+.extincao{
 
     height: 100px;
     background-image: url("../assets/fundos/fundodescobertas\(final\).png");
@@ -365,7 +365,7 @@ h4{
 
 }
 
-.inicio-descobertas{
+.inicio-extincao{
 
     display: flex;
     justify-content: center;
@@ -378,7 +378,7 @@ h4{
     
 }
 
-.titulo-descobertas{
+.titulo-extincao{
 
     color: aliceblue;
     font-size: 45px;
@@ -386,7 +386,7 @@ h4{
 }
 
 
-.container-descobertas{
+.container-extincao{
 
 
     align-items: center;
@@ -397,7 +397,7 @@ h4{
    
 }
 
-.texto-descobertas{
+.texto-extincao{
 
     text-align: center;
     font-size: xx-large;
