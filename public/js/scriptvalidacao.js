@@ -180,7 +180,7 @@
                 } // FUNCIONOUUUUUUUUUUUUUUUUUUUUUUUUUUUU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DEUS É BOM (e o diabo é ruim)
 }
 
-    function logar(){
+    function entrar(){
         var email = document.getElementById('iptemail').value;
         var senha =  document.getElementById('iptsenha').value;
         var mensagemErro = "";
@@ -211,10 +211,7 @@
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.idUsuario;
-
-
-                        window.location.href = "index.html";
-    
+                        window.location.href = "./index.html";
                     });
     
                 } else {
