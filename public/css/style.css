@@ -705,3 +705,111 @@ h5{
 
 
 }
+
+/* QUIZ */
+
+.quiz{
+
+    height: 100px;
+    background-image: url("../assets/fundos/fundologin.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+
+}
+
+.container-quiz{
+
+    height: 50rem;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-questao{
+
+    color: aliceblue;
+    background-color:  rgba(26, 22, 18, 0.554);
+    width: 34rem;
+    height: 40rem;
+    text-align: center;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.161);
+    
+}
+
+.box-questao:hover{
+
+    width: 38rem;
+    height: 45rem;
+    font-size: 35px;
+
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+}
+
+.questao{
+
+    font-weight: 700;
+    text-align:center;
+    color: aliceblue;
+
+}
+
+.box-respostas{
+
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+}
+
+.button{
+
+    cursor: pointer;
+    background-color: #00343b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border: 0;
+    border-radius: 10px;
+    height: 48px;
+    padding: 0 32px;
+    transition: 0.2s;
+
+}
+
+.avancar{
+
+    width: auto;
+
+}
+
+.button:hover{
+
+    background-color: #002227;
+    
+}
+
+#divaparecer{
+
+    display: none;
+
+
+}

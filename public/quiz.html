@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./assets/skull.png" sizes="16x16">
+
+    <title>DinoTech | Início</title>
+
+</head>
+
+<body class="quiz">
+    <header>
+        <div class="container">
+        <h1 class="titulo"><a href="#">DinoTech</a></h1>
+           <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="curiosidades.html">Curiosidades </a></li>
+            <li><a href="especies.html">Espécies</a></li>
+            <li><a href="recomendacoes.html">Recomendações</a></li>
+            <li>|</li>
+            <li class="atual"><a href="#">Quiz</a></li>
+            <li><a href="extincao.html">Extinção</a></li>
+            <li><a href="login.html">Logar</a></li>
+            <li><a href="cadastro.html">Cadastrar</a></li>
+           </ul>
+        </div>
+    </header>
+    
+    
+    <div class="container-quiz">
+        <div class="aparecer-box" id="divaparecer">
+        <div class="box-questao">
+            <div class="conteudo">
+                <span class="questao">Perguntinha</span>
+                <div class="box-respostas">
+                    <button class="respostas button">Reposta1</button>
+                    <button class="respostas button">Reposta2</button>
+                    <button class="respostas button">Reposta3</button>
+                    <button class="respostas button">Reposta4</button>
+                </div>
+                <div class="avancar">
+                    <button class="avancar-quiz button">Próxima Pergunta</button>
+                </div>
+            </div>
+            </div>
+        </div>
+            <div class="box-proxima">
+                <button class="comecar-quiz button" onclick="comecar('divaparecer')">Começar Quiz</button>
+            </div>
+    </div>
+</body>
+</html>
+<script>
+
+    function comecar(){
+        var aparecer = document.getElementById('divaparecer').style.display;
+
+        if(aparecer == 'none'){
+            document.getElementById('divaparecer').style.display = 'block'
+        }else{
+            document.getElementById('divaparecer').style.display = 'none'
+        }
+
+
+    }
+
+</script>
