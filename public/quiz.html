@@ -51,22 +51,111 @@
         </div>
             <div class="box-proxima">
                 <button class="comecar-quiz button" onclick="comecar('divaparecer')">Começar Quiz</button>
+                <button class="finalizar-quiz button" onclick="terminar('divaparecer')">Desistir do Quiz</button>
             </div>
     </div>
 </body>
 </html>
 <script>
+    var botaoStart = document.querySelector(".comecar-quiz")
+    var botaoEnd = document.querySelector(".finalizar-quiz")
+    var containerRespostas = document.querySelector(".box-respostas")
+    var textoQuestao = document.querySelector(".questao")
+    var questaoAtual = 0;
 
+    botaoEnd.style.display = 'none'
     function comecar(){
         var aparecer = document.getElementById('divaparecer').style.display;
 
         if(aparecer == 'none'){
             document.getElementById('divaparecer').style.display = 'block'
+            botaoStart.style.display = 'none'
+            botaoEnd.style.display = 'block'
         }else{
             document.getElementById('divaparecer').style.display = 'none'
         }
 
+        proximaQuestao()
 
     }
 
+    function proximaQuestao(){
+        while(containerRespostas.firstChild) {
+            containerRespostas.removeChild(containerRespostas.firstChild)
+        }
+
+
+        textoQuestao.textContent = questoes[questaoAtual].questao
+        questoes[questaoAtual].respostas.forEach(respostas => {
+            var novaResposta = document.createElement("button")
+            novaResposta.classList.add("button", "respostas")
+            novaResposta.textContent = respostas.text
+            if(respostas.correct){
+                novaResposta.dataset.correct = respostas.correct
+            }
+            containerRespostas.appendChild(novaResposta)
+
+        })
+
+    }
+
+    function terminar(){
+        var sumir = document.getElementById('divaparecer').style.display;
+
+        if(sumir == 'block'){
+            document.getElementById('divaparecer').style.display = 'none'
+            botaoStart.style.display = 'block'
+            botaoEnd.style.display = 'none'
+        }else{
+            document.getElementById('divaparecer').style.display = 'blockk'
+        }    
+        
+    }
+
+
+
+
+
+
+var questoes = [
+{
+    questao: "Primeira perguntaaaa",
+    respostas: [
+        {text: "Resposta1", correct: false},
+        {text: "Resposta2", correct: false},
+        {text: "Resposta3", correct: true},
+        {text: "Resposta4", correct: false},
+    ]
+},
+
+{
+    questao: "Segunda pergunta",
+    respostas: [
+        {text: "Resposta1", correct: true},
+        {text: "Resposta2", correct: false},
+        {text: "Resposta3", correct: false},
+        {text: "Resposta4", correct: false},
+    ]
+},
+
+{
+    questao: "Terceira pergunta",
+    respostas: [
+        {text: "Resposta1", correct: false},
+        {text: "Resposta2", correct: false},
+        {text: "Resposta3", correct: false},
+        {text: "Resposta4", correct: true},
+    ]
+},
+
+{
+    questao: "Quarta pergunta",
+    respostas: [
+        {text: "Resposta1", correct: false},
+        {text: "Resposta2", correct: true},
+        {text: "Resposta3", correct: false},
+        {text: "Resposta4", correct: false},
+    ]
+},
+]
 </script>
