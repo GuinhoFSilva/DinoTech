@@ -63,6 +63,18 @@ header a:hover{
     font-size: 110%;
 }
 
+header #loginCadastro{
+
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+}
+
+header #botaoSair{
+    display: none;
+}
+
 .container{
 
     display: flex;

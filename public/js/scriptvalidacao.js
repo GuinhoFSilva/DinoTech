@@ -185,6 +185,12 @@
         var senha =  document.getElementById('iptsenha').value;
         var mensagemErro = "";
 
+        if(sessionStorage.NOME_USUARIO != undefined) {
+            setTimeout (() => {
+            document.getElementById('loginCadastro').style.display = 'none';
+            }, 2000)
+         }
+
         if(!email || !senha){
             mensagemErro = "Erro! Informe ambos os campos"
         }
@@ -226,6 +232,6 @@
             })
     
             return false;
-        }
 
-                
+        }
+         
