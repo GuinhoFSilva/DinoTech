@@ -73,6 +73,7 @@ header #loginCadastro{
 
 header #botaoSair{
     display: none;
+    cursor: pointer;
 }
 
 .container{
