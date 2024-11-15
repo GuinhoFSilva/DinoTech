@@ -8,28 +8,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./assets/skull.png" sizes="16x16">
+    <script src="./js/scriptVerificar.js"></script>
 
     <title>DinoTech | Curiosidades</title>
 
 </head>
 
 <body class="curiosidades">
-    <header>
-        <div class="container">
-        <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
-           <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li class="atual"><a href="#">Curiosidades </a></li>
-            <li><a href="especies.html">Espécies</a></li>
-            <li><a href="recomendacoes.html">Recomendações</a></li>
-            <li>|</li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="extincao.html">Extinção</a></li>
-            <li><a href="login.html">Logar</a></li>
-            <li><a href="cadastro.html">Cadastrar</a></li>
-           </ul>
+<header>
+    <div class="container">
+    <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
+        <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li class="atual"><a href="#">Curiosidades </a></li>
+        <li><a href="especies.html">Espécies</a></li>
+        <li><a href="recomendacoes.html">Recomendações</a></li>
+        <li>|</li>
+        <li><a href="extincao.html">Extinção</a></li>
+        <div id="divquiz">
+        <li><a href="quiz.html">Quiz</a></li>
         </div>
-    </header>
+        <div id="divlogin">
+        <li><a href="login.html">Logar</a></li>
+        </div>
+        <div id="divcadastro">
+        <li><a href="cadastro.html">Cadastrar</a></li>
+        </div>
+        <div id="botaoSair">
+        <li><a onclick="sair()">Sair</a></li>
+        </div>
+        </ul>
+    </div>
+</header>
     <div class="container-text">
         <div class="inicio">
             <h3>Bem-vindo ao Mundo Fascinante dos<br>Dinossauros</h3>

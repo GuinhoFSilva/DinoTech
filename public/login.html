@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./assets/skull.png" sizes="16x16">
     <script src="./js/scriptvalidacao.js"></script>
+    <script src="./js/scriptVerificar.js"></script>
     <title>DinoTech | Login</title>
 
 </head>
@@ -19,16 +20,20 @@
             <li><a href="especies.html">Espécies</a></li>
             <li><a href="recomendacoes.html">Recomendações</a></li>
             <li>|</li>
-            <li><a href="quiz.html">Quiz</a></li>
             <li><a href="extincao.html">Extinção</a></li>
-            <div id="loginCadastro">
+            <div id="divquiz">
+            <li><a href="quiz.html">Quiz</a></li>
+            </div>
+            <div id="divlogin">
             <li class="atual"><a href="#">Logar</a></li>
+            </div>
+            <div id="divcadastro">
             <li><a href="cadastro.html">Cadastrar</a></li>
             </div>
             <div id="botaoSair">
-            <li><a>Sair</a></li>
+            <li><a onclick="sair()">Sair</a></li>
             </div>
-           </ul>
+            </ul>
         </div>
     </header>
     <div class="container-login">
