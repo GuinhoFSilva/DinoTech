@@ -63,11 +63,11 @@ header a:hover{
     font-size: 110%;
 }
 
-header #loginCadastro{
+header .navbar .container #loginCadastro{
 
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 0px;
 
 }
 
@@ -746,8 +746,8 @@ h5{
 
     color: aliceblue;
     background-color:  rgba(26, 22, 18, 0.554);
-    width: 34rem;
-    height: 40rem;
+    width: 40rem;
+    height: 35rem;
     text-align: center;
     font-size: xx-large;
     display: flex;
@@ -761,8 +761,8 @@ h5{
 
 .box-questao:hover{
 
-    width: 38rem;
-    height: 45rem;
+    width: 44rem;
+    height: 40rem;
     font-size: 35px;
 
 }
