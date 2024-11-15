@@ -43,15 +43,13 @@
                     <button class="respostas button">Reposta3</button>
                     <button class="respostas button">Reposta4</button>
                 </div>
-                <div class="avancar">
-                    <button class="avancar-quiz button">Próxima Pergunta</button>
-                </div>
+                <div class="mensagemFinal" id="divmsg"></div>
             </div>
-            </div>
+        </div>
         </div>
             <div class="box-proxima">
                 <button class="comecar-quiz button" onclick="comecar('divaparecer')">Começar Quiz</button>
-                <button class="finalizar-quiz button" onclick="terminar('divaparecer')">Desistir do Quiz</button>
+                <button class="finalizar-quiz button" onclick="refazer()">Refazer Quiz</button>
             </div>
     </div>
 </body>
@@ -62,6 +60,7 @@
     var containerRespostas = document.querySelector(".box-respostas")
     var textoQuestao = document.querySelector(".questao")
     var questaoAtual = 0;
+    var questoesCorretas = 0;
 
     botaoEnd.style.display = 'none'
     function comecar(){
@@ -80,6 +79,12 @@
     }
 
     function proximaQuestao(){
+
+        if(questoes.length == questaoAtual){
+            return terminar()
+        }
+
+
         while(containerRespostas.firstChild) {
             containerRespostas.removeChild(containerRespostas.firstChild)
         }
@@ -95,21 +100,62 @@
             }
             containerRespostas.appendChild(novaResposta)
 
+            novaResposta.addEventListener("click", selecionarResposta)
         })
+  
+    }
 
+
+    function selecionarResposta(event){
+        var respostaClicada = event.target
+
+        if(respostaClicada.dataset.correct){
+            questoesCorretas++
+        }
+
+
+
+        document.querySelectorAll(".respostas").forEach(button => {
+            if(button.dataset.correct){
+                button.classList.add("correto")
+            }else{
+                button.classList.add("incorreto")
+            }
+            button.disabled = true
+        })
+            setTimeout(() => {
+                proximaQuestao()
+            }, 1500);
+            questaoAtual++
     }
 
     function terminar(){
-        var sumir = document.getElementById('divaparecer').style.display;
-
-        if(sumir == 'block'){
-            document.getElementById('divaparecer').style.display = 'none'
-            botaoStart.style.display = 'block'
-            botaoEnd.style.display = 'none'
+        var questoesTotais = questoes.length
+        var performance = Math.floor(questoesCorretas * 100 / questoesTotais)
+        var mensagem = ""  
+       
+        if(performance >= 90){
+            mensagem = `Você acertou um total de: ${questoesCorretas} perguntas!
+                        sua performance foi de ${performance}%, parabéns :D`
+        }else if(performance >= 60){
+            mensagem = `Você acertou um total de: ${questoesCorretas} perguntas!
+                        sua performance foi de ${performance}%, foi bem`
         }else{
-            document.getElementById('divaparecer').style.display = 'blockk'
-        }    
-        
+            mensagem = `Você acertou um total de: ${questoesCorretas} pergunta(s)!
+                        sua performance foi de ${performance}%, poderia ter ido melhor :(`
+        }
+ 
+
+        divmsg.innerHTML = mensagem
+
+    }
+
+    function refazer(){
+        terminar()
+        setTimeout(() => {
+        window.location.reload()
+            
+        }, 3000);
     }
 
 
@@ -119,12 +165,12 @@
 
 var questoes = [
 {
-    questao: "Primeira perguntaaaa",
+    questao: "Há quantos anos os dinossauros foram extintos?",
     respostas: [
-        {text: "Resposta1", correct: false},
-        {text: "Resposta2", correct: false},
-        {text: "Resposta3", correct: true},
-        {text: "Resposta4", correct: false},
+        {text: "45 milhões de anos", correct: false},
+        {text: "63 milhões de anos", correct: false},
+        {text: "66 milhões de anos", correct: true},
+        {text: "65 mil anos", correct: false},
     ]
 },
 

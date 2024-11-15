@@ -808,15 +808,33 @@ h5{
 
 }
 
+.correto{
+
+    background-color: #003c06;
+
+}
+
+.button .correto:hover{
+
+    background-color: #002103;
+
+}
+
+.incorreto{
+
+    background-color: #3c0000;
+
+}
+
 .avancar{
 
     width: auto;
-
+    display: none;
 }
 
 .button:hover{
 
-    background-color: #002227;
+    filter: brightness(0.7);
     
 }
 
@@ -824,5 +842,13 @@ h5{
 
     display: none;
 
+
+}
+
+.mensagemFinal{
+
+    text-align: center;
+    margin: 20px;
+    margin-top: 0;
 
 }
