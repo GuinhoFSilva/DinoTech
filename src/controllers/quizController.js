@@ -3,10 +3,11 @@ var quizModel = require("../models/quizModel");
 
 function salvarPontuacao(req, res){
     var idUsuario = req.body.idUsuarioServer
+    var pontuacao = req.body.pontuacaoServer
     var performance = req.body.performanceServer
     var tempoTotal = req.body.tempoTotalServer
 
-    quizModel.salvarPontuacao(idUsuario, performance, tempoTotal)
+    quizModel.salvarPontuacao(idUsuario, pontuacao, performance, tempoTotal)
         .then(
             function (resultado) {
                 res.json(resultado);

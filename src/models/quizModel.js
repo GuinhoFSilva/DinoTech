@@ -1,9 +1,9 @@
 var database = require("../database/config")
 
-function salvarPontuacao(idUsuario, performance, tempoTotal) {
+function salvarPontuacao(idUsuario, pontuacao, performance, tempoTotal) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")  
     var instrucaoSql = `
-        INSERT INTO resultadosQuiz (fkUsuario, performance, tempoTotal) VALUES ('${idUsuario}', '${performance}', '${tempoTotal}');
+        INSERT INTO resultadosQuiz (fkUsuario, pontuacao, performance, tempoTotal) VALUES ('${idUsuario}', '${pontuacao}', '${performance}', '${tempoTotal}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

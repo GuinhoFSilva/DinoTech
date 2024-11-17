@@ -145,6 +145,7 @@
     function terminar(){
         var questoesTotais = questoes.length
         var performance = Math.floor(questoesCorretas * 100 / questoesTotais)
+        var pontuacao = questoesCorretas
         var mensagem = ""  
         var tempo = "segundos"
         fim = new Date()
@@ -173,6 +174,7 @@
                     },
                     body: JSON.stringify({
                       idUsuarioServer: sessionStorage.ID_USUARIO,
+                      pontuacaoServer: pontuacao,
                       performanceServer: performance,
                       tempoTotalServer: tempoTotal
                     }),
