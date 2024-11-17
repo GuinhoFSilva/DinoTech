@@ -11,8 +11,8 @@ senha VARCHAR(30)
 CREATE TABLE resultadosQuiz(
 idResultado INT PRIMARY KEY AUTO_INCREMENT,
 fkUsuario INT,
-pontuacao INT,
-tempoTotal DECIMAL(10, 2)
+performance INT,
+tempoTotal DECIMAL(10, 2),
 CONSTRAINT resultadoUsuario FOREIGN KEY (fkUsuario)
     REFERENCES usuario(idUsuario)
 );

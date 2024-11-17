@@ -216,7 +216,7 @@
                         console.log(json);
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.ID_USUARIO = json.idUsuario;
+                        sessionStorage.ID_USUARIO = json.id;
                         setTimeout (() => {
                             window.location.href = "./index.html";
                         }, 2000);
