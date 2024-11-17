@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./assets/skull.png" sizes="16x16">
-    <script src="./js/scriptvalidacao.js"></script>
     <script src="./js/scriptVerificar.js"></script>
-    <title>DinoTech | Login</title>
+
+    <title>DinoTech | Início</title>
 
 </head>
-<body class="login">
+
+<body class="quiz">
     <header>
         <div class="container">
         <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
@@ -28,7 +32,7 @@
                 <li class="atual"><a href="#">Leaderboard</a></li>
             </div>
             <div id="divlogin">
-            <li class="atual"><a href="#">Logar</a></li>
+            <li><a href="login.html">Logar</a></li>
             </div>
             <div id="divcadastro">
             <li><a href="cadastro.html">Cadastrar</a></li>
@@ -39,32 +43,26 @@
             </ul>
         </div>
     </header>
-    <div class="container-login">
-
-        <div class="card-login">
-            <div class="info">
-            <div class="titulo-login">
-            <h3>Login</h3><br>
-            </div>
-            <div class="card-infos">
-            <div class="info-login">
-            <h5>Digite seu email:</h5><br>
-            </div>
-            <input class="input-login" id="iptemail" type="text" placeholder="email@example.com"><br>
-            <div class="info-login"> 
-            <h5>Digite sua senha:</h5><br>
-            </div>
-            <input class="input-login" id="iptsenha" type="password" placeholder="********"><br>
-            <div class="botao-login">
-            <button class="botao-logar" onclick="entrar()">Logar</button>
-            </div>
-            <div id="divmsgerro"></div>
-            <div id="divmsgerrosenha"></div>
-            <div class="link-cadastro">
-            <p>Não possuí um cadastro? <a href="cadastro.html">Ir para a página de cadastro</a></p>
-            </div>
-            </div>
+    <div class="container-leaderboard">
+        <div class="kpis-card">
+            <div class="kpis-titulo">Melhor Jogador</div>
+            <div class="melhorJogador"></div>
         </div>
     </div>
-</body>
-</html>
+    <script>
+          function carregarKPIs() {
+            fetch("/quiz/kpis")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('melhorJogador').textContent = data.melhorJogador;
+                    document.getElementById('melhorJogadorDetalhes').textContent = 
+                        `Pontuação: ${data.maiorPontuacao}% | Tempo: ${data.menorTempo}s`;
+                })
+                .catch(error => console.error('Erro ao carregar KPIs:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            carregarKPIs();
+        })
+    </script>
