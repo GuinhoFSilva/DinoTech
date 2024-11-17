@@ -747,7 +747,7 @@ h5{
     color: aliceblue;
     background-color:  rgba(26, 22, 18, 0.554);
     width: 40rem;
-    height: 35rem;
+    height: 45rem;
     text-align: center;
     font-size: xx-large;
     display: flex;
@@ -762,7 +762,7 @@ h5{
 .box-questao:hover{
 
     width: 44rem;
-    height: 40rem;
+    height: 50rem;
     font-size: 35px;
 
 }

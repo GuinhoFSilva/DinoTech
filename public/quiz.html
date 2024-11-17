@@ -71,10 +71,13 @@
     var textoQuestao = document.querySelector(".questao")
     var questaoAtual = 0;
     var questoesCorretas = 0;
+    var inicio
+    var fim
 
     botaoEnd.style.display = 'none'
     function comecar(){
         var aparecer = document.getElementById('divaparecer').style.display;
+        inicio = new Date()
 
         if(aparecer == 'none'){
             document.getElementById('divaparecer').style.display = 'block'
@@ -135,7 +138,7 @@
         })
             setTimeout(() => {
                 proximaQuestao()
-            }, 1500);
+            }, 1000);
             questaoAtual++
     }
 
@@ -143,6 +146,10 @@
         var questoesTotais = questoes.length
         var performance = Math.floor(questoesCorretas * 100 / questoesTotais)
         var mensagem = ""  
+        var tempo = "segundos"
+        fim = new Date()
+        var tempoTotal = (fim - inicio) / 1000;
+        console.log(`Tempo total: ${tempoTotal} segundos`)
        
         if(performance >= 90){
             mensagem = `Você acertou um total de: ${questoesCorretas} perguntas!
@@ -154,9 +161,27 @@
             mensagem = `Você acertou um total de: ${questoesCorretas} pergunta(s)!
                         sua performance foi de ${performance}%, poderia ter ido melhor :(`
         }
+        mensagem += `Você demorou ${tempoTotal} ${tempo} para realizar o quiz!`
  
 
         divmsg.innerHTML = mensagem
+
+        fetch("/quiz/salvarPontuacao", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      idUsuarioServer: sessionStorage.ID_USUARIO,
+                      performanceServer: performance,
+                      tempoTotalServer: tempoTotal
+                    }),
+                })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+                    })
+                    
+                    return false;
 
     }
 
