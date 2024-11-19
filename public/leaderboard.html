@@ -45,8 +45,9 @@
     </header>
     <div class="container-leaderboard">
         <div class="kpis-card">
-            <div class="kpis-titulo">Melhor Jogador</div>
-            <div class="melhorJogador"></div>
+            <div id="kpis-titulo">Melhor Jogador</div>
+            <div id="melhorJogador"></div>
+            <div id="melhorJogadorDetalhes"></div>
         </div>
     </div>
     <script>
@@ -54,9 +55,9 @@
             fetch("/quiz/kpis")
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('melhorJogador').textContent = data.melhorJogador;
+                    document.getElementById('melhorJogador').textContent = data.tempoTotal;
                     document.getElementById('melhorJogadorDetalhes').textContent = 
-                        `Pontuação: ${data.maiorPontuacao}% | Tempo: ${data.menorTempo}s`;
+                        `Pontuação: ${data.pontuacao}% | Tempo: ${data.menorTempo}s`;
                 })
                 .catch(error => console.error('Erro ao carregar KPIs:', error));
         }

@@ -24,16 +24,7 @@ function leaderboard(){
 function kpis(){
 
     var consultaBD = `
-                      SELECT ROUND(AVG(performance), 2) AS 'Média de acertos',
-                      SELECT ROUND(AVG(tempoTotal), 2) AS 'Tempo Médio',
-                      (
-                      SELECT u.nome
-                      FROM resultadosQuiz r
-                      JOIN usuario u ON r.fkUsuario = u.idUsuario
-                      ORDER BY r.performance DESC, r.tempoTotal ASC
-                      LIMIT 1
-                      ) as 'Melhor Jogador'
-                       FROM resultadosQuiz;`
+                      SELECT ROUND(AVG(performance), 2) AS 'Média de acertos', ROUND(AVG(tempoTotal), 2) AS 'Tempo Médio', (SELECT u.nome FROM resultadosQuiz AS r JOIN usuario AS u ON r.fkUsuario = u.idUsuario ORDER BY r.performance DESC, r.tempoTotal ASC LIMIT 1) as 'Melhor Jogador' FROM resultadosQuiz;`
 
                        console.log("Executando a consulta SQL: \n" + consultaBD)
 
@@ -41,5 +32,7 @@ function kpis(){
 }
 
 module.exports = {
-    salvarPontuacao
+    salvarPontuacao,
+    kpis,
+    leaderboard
 };

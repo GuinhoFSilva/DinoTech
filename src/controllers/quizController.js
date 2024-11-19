@@ -59,5 +59,7 @@ function kpis(req, res){
 
 }
 module.exports = {
-    salvarPontuacao
+    salvarPontuacao,
+    leaderboard,
+    kpis
 };
