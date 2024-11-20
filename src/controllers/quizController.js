@@ -41,6 +41,7 @@ function leaderboard(req, res){
 }
 
 function kpis(req, res){
+    
     quizModel.kpis()
     .then(
         function (resultado) {
@@ -60,6 +61,6 @@ function kpis(req, res){
 }
 module.exports = {
     salvarPontuacao,
-    leaderboard,
-    kpis
+    kpis,
+    leaderboard
 };

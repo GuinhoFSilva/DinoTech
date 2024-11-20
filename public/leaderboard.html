@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="quiz">
+<body class="quiz" onload="carregarKPIs()"> 
     <header>
         <div class="container">
         <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
@@ -51,22 +51,26 @@
         </div>
     </div>
     <script>
-          function carregarKPIs() {
-            fetch("/quiz/kpis")
+      function carregarKPIs() {
+        fetch("/quiz/kpis").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
 
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('melhorJogador').textContent = data.tempoTotal;
-                    document.getElementById('melhorJogadorDetalhes').textContent = 
-                        `Pontuação: ${data.pontuacao}% | Tempo: ${data.menorTempo}s`;
-                })
-                .catch(error => console.error('Erro ao carregar KPIs:', error));
-        }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    melhorJogador.innerHTML = `${resposta[0].Média_de_acertos}`
+                    melhorJogadorDetalhes.innerHTML = `${resposta[0].Melhor_Jogador}`
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta)
+        });
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-
-            carregarKPIs();
-        })
     </script>
 
     

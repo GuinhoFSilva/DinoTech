@@ -24,7 +24,7 @@ function leaderboard(){
 function kpis(){
 
     var consultaKPISBD = `
-                      SELECT ROUND(AVG(performance), 2) AS 'Média de acertos', ROUND(AVG(tempoTotal), 2) AS 'Tempo Médio', (SELECT u.nome FROM resultadosQuiz AS r JOIN usuario AS u ON r.fkUsuario = u.idUsuario ORDER BY r.performance DESC, r.tempoTotal ASC LIMIT 1) as 'Melhor Jogador' FROM resultadosQuiz;`
+                      SELECT ROUND(AVG(performance), 2) AS Média_de_acertos, ROUND(AVG(tempoTotal), 2) AS Tempo_Médio, (SELECT u.nome FROM resultadosQuiz AS r JOIN usuario AS u ON r.fkUsuario = u.idUsuario ORDER BY r.performance DESC, r.tempoTotal ASC LIMIT 1) as Melhor_Jogador FROM resultadosQuiz;`
 
                        console.log("Executando a consulta SQL: \n" + consultaKPISBD)
 
