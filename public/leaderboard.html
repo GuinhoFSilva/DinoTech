@@ -53,6 +53,7 @@
     <script>
           function carregarKPIs() {
             fetch("/quiz/kpis")
+
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('melhorJogador').textContent = data.tempoTotal;
@@ -67,3 +68,5 @@
             carregarKPIs();
         })
     </script>
+
+    

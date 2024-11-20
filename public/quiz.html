@@ -61,7 +61,7 @@
         </div>
         </div>
             <div class="box-proxima">
-                <button class="comecar-quiz button" onclick="comecar('divaparecer')">Começar Quiz</button>
+                <button class="comecar-quiz button" onclick="comecar()">Começar Quiz</button>
                 <button class="finalizar-quiz button" onclick="refazer()">Refazer Quiz</button>
             </div>
     </div>
@@ -76,18 +76,19 @@
     var questoesCorretas = 0;
     var inicio
     var fim
+    var aparecer = document.getElementById('divaparecer');
 
     botaoEnd.style.display = 'none'
+    aparecer.style.display = 'none'
     function comecar(){
-        var aparecer = document.getElementById('divaparecer').style.display;
         inicio = new Date()
 
-        if(aparecer == 'none'){
-            document.getElementById('divaparecer').style.display = 'block'
+        if(aparecer.style.display == 'none'){
             botaoStart.style.display = 'none'
             botaoEnd.style.display = 'block'
+            aparecer.style.display = 'block'
         }else{
-            document.getElementById('divaparecer').style.display = 'none'
+           aparecer.style.display = 'none'
         }
 
         proximaQuestao()
@@ -165,7 +166,7 @@
             mensagem = `Você acertou um total de: ${questoesCorretas} pergunta(s)!
                         sua performance foi de ${performance}%, poderia ter ido melhor :(`
         }
-        mensagem += `Você demorou ${tempoTotal} ${tempo} para realizar o quiz!`
+        mensagem += `<br>Você demorou ${tempoTotal} ${tempo} para realizar o quiz!`
  
 
         divmsg.innerHTML = mensagem
@@ -191,10 +192,10 @@
     }
 
     function refazer(){
-        terminar()
+        // terminar()
         setTimeout(() => {
         window.location.reload()
-        }, 3000);
+        }, 1000);
             
     }
 
@@ -263,5 +264,46 @@ var questoes = [
         {text: "2 anos", correct: false},
     ]
 },
+
+{
+    questao: "Qual o significado do nome 'Tiranossauro Rex'?",
+    respostas: [
+        {text: "Rei Lagarto", correct: false},
+        {text: "Lagarto Tirano", correct: false},
+        {text: "Rei Lagarto Tirano", correct: true},
+        {text: "Rainha Lagarto Tirano", correct: false},
+    ]
+},
+
+{
+    questao: "Qual foi o maior Dinossauro conhecido pela ciência?",
+    respostas: [
+        {text: "Patagotitan", correct: true},
+        {text: "Braquiossauro", correct: false},
+        {text: "Titãssauro", correct: false},
+        {text: "Bigssauro", correct: false},
+    ]
+},
+
+{
+    questao: "Qual é o dinossauro que ficou conhecido como elo perdido entre os dinossauros e as aves atuais?",
+    respostas: [
+        {text: "Velociraptor", correct: false},
+        {text: "Arqueopterix", correct: true},
+        {text: "Argentinossauro", correct: false},
+        {text: "Espinossauro", correct: false},
+    ]
+},
+
+{
+    questao: "Qual é o dinossauro que ficou conhecido como elo perdido entre os dinossauros e as aves atuais?",
+    respostas: [
+        {text: "Velociraptor", correct: false},
+        {text: "Arqueopterix", correct: true},
+        {text: "Argentinossauro", correct: false},
+        {text: "Espinossauro", correct: false},
+    ]
+}
+
 ]
 </script>

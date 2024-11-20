@@ -745,7 +745,7 @@ h5{
 .box-questao{
 
     color: aliceblue;
-    background-color:  rgba(26, 22, 18, 0.554);
+    background-color:  rgba(2, 22, 0, 0.377);
     width: 40rem;
     height: 45rem;
     text-align: center;
@@ -771,6 +771,7 @@ h5{
     display: flex;
     flex-direction: column;
     height: 150px;
+    justify-content: center;
     gap: 24px;
     width: 100%;
     align-items: center;
@@ -778,6 +779,7 @@ h5{
 
 .questao{
 
+    display: flex;
     font-weight: 700;
     text-align:center;
     color: aliceblue;
@@ -796,7 +798,7 @@ h5{
 .button{
 
     cursor: pointer;
-    background-color: #00343b;
+    background-color: #0a2b00a8;
     color: #fff;
     font-size: 16px;
     font-weight: 700;

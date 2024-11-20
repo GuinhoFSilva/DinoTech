@@ -23,7 +23,7 @@
     var senha =  document.getElementById('iptsenha').value;
     var tamanhoSenha = senha.length;
     var mensagemErro = ""
-    var caracteres = '!@#$%&*_?'
+    var caracteres = ['!', '@', '#', '$', '%', '&', '*', '_', '?', '/']
     var especiais = false;
     var numero = false;
     var minuscula = false;
