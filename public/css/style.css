@@ -862,8 +862,10 @@ h5{
     display: flex;
     justify-self: center;
     flex-direction: row;
-    height: auto;
-    width: 70%;
+    height: 50rem;
+    background-color: #003c06;
+    width: 60%;
+
 
 }
 
@@ -874,7 +876,7 @@ h5{
     flex-direction: column;
     text-align: center;
     background-color: rgba(4,21,21, 0.554);
-    height: 410px;
+    height: 460px;
     width: 200px;
     align-items: center;
 
@@ -888,12 +890,36 @@ h5{
    
 }
 
-.graficoChart{
+.ranking{
 
     display: flex;
-    align-self: center;
-    justify-content: center;
+    color: aliceblue;
+    align-items: center;
+    flex-direction: column;
+    height: 20rem;
+    width: 70%;
+    font-size: large;
 
+}
+
+.jogadores{
+
+    display: flex;
+    flex-direction: row;
+    /* gap: 24px; */
+    justify-content: center;
+    
+
+}
+
+.nomejogadores{
+
+    display: flex;
+    justify-content: center;   
+    align-self: center;
+    text-align: center;
+    width: 200px;
+    
 
 
 }

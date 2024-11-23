@@ -11,7 +11,7 @@ function salvarPontuacao(idUsuario, pontuacao, performance, tempoTotal) {
 
 function leaderboard(){
     var consultaLeaderBD = `
-                      SELECT usuario.nome, performance, tempoTotal, FROM resultadosQuiz
+                      SELECT usuario.idUsuario, usuario.nome, performance, tempoTotal FROM resultadosQuiz
                       JOIN usuario
                       ON resultadosQuiz.fkUsuario = usuario.idUsuario
                       ORDER BY performance DESC, tempoTotal ASC;`

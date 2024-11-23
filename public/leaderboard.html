@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="quiz" onload="carregarKPIs()"> 
+<body class="quiz" onload="carregarKPIs(), leaderboard()"> 
     <header>
         <div class="container">
         <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
@@ -48,19 +48,38 @@
     <div class="container-leaderboard">
         <div class="kpis-card">
             <div id="kpis"><h1>Melhor Jogador</h1>
-                <div id="melhorJogador"></div>
+                <h2 id="melhorJogador"></h2>
             </div>
             <div id="kpis"><h1>Média de Acertos</h1>
-                <div id="mediaAcertos"></div>
+                <h2 style="color:rgb(222, 255, 243)" id="mediaAcertos"></h2>
             </div>
             <div id="kpis"><h1>Tempo Médio</h1>
-                <div id="tempoMedio"></div>
+                <h2 id="tempoMedio"></h2>
             </div>
         </div>
-        <div class="graficoChart">
-            <canvas id="myChart"></canvas>
+        <div class="ranking">
+            <div class="titulo">
+            <h1>Jogadores</h1>
+            </div>
+            <div class="jogadores">
+                <div id="idjogadores">
+                    <h2 id="idjogador"></h2>
+                </div>
+                <div class="nomejogadores">
+                    <h2 id="nomejogador"></h2>
+                </div>
+                <div id="performancejogadores">
+                    <h2 id="performancejogador"></h2>
+                </div>
+                <div id="tempojogadores">
+                    <h2 id="tempoTotal"></h2>
+                </div>
+            </div>
         </div>
     </div>
+        <!-- <div class="graficoChart">
+            <canvas id="myChart"></canvas>
+        </div> -->
     <script>
       function carregarKPIs() {
         fetch("/quiz/kpis").then(function (resposta) {
@@ -82,29 +101,59 @@
             console.error(resposta)
         });
     }
+      function leaderboard(){
+
+            fetch("/quiz/leaderboard").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    for(var i = 0; i <= resposta.length; i++){
+                        var respostaAtual = resposta[i]
+                        idjogador.innerHTML += `${respostaAtual.idUsuario} - <br>`
+                        nomejogador.innerHTML += ` ${respostaAtual.nome}<br>`
+                        performancejogador.innerHTML += ` - ${respostaAtual.performance} - <br>`
+                        tempoTotal.innerHTML += `${respostaAtual.tempoTotal}<br>`
+                        // ${respostaAtual.performance} - ${respostaAtual.tempoTotal} <br>
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta)
+        });
+
+
+
+
+    }
 
 
 // GRÁFICO CHART.JS
-const ctx = document.getElementById('myChart');
+// const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+// new Chart(ctx, {
+//   type: 'bar',
+//   data: {
+//     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//     datasets: [{
+//       label: '# of Votes',
+//       data: [12, 19, 3, 5, 2, 3],
+//       borderWidth: 1
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true
+//       }
+//     }
+//   }
+// });
     </script>
 
     
