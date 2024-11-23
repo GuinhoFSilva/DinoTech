@@ -854,3 +854,46 @@ h5{
     margin-top: 0;
 
 }
+
+/* LEADERBOARD */
+
+.container-leaderboard{
+
+    display: flex;
+    justify-self: center;
+    flex-direction: row;
+    height: auto;
+    width: 70%;
+
+}
+
+.kpis-card{
+
+    display: flex;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(4,21,21, 0.554);
+    height: 410px;
+    width: 200px;
+    align-items: center;
+
+
+}
+
+.kpis{
+    
+
+    text-align: center;
+   
+}
+
+.graficoChart{
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+
+
+}

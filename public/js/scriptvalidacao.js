@@ -118,7 +118,6 @@
             divmsgerroemail.innerHTML = mensagemErro
 
     }
-    
     function cadastrar(){
         var senha =  document.getElementById('iptsenha').value;
         var confirmacaoSenha =  document.getElementById('iptconfirma').value;
@@ -148,6 +147,7 @@
                 mensagemErro += `As senhas não coicidem`
                 cadastro = false;
             }
+            
             if(validacaonome && validacaoemail && validacaosenha && cadastro){
                 alert("CADASTRO REALIZADO COM SUCESSO")
                 
@@ -159,15 +159,16 @@
                     body: JSON.stringify({
                         // crie um atributo que recebe o valor recuperado aqui
                       // Agora vá para o arquivo routes/usuario.js
+                      idUsuarioServer: sessionStorage.ID_USUARIO,
                       nomeServer: nome,
                       emailServer: email,
-                      senhaServer: senha
+                      senhaServer: senha,
                     }),
                 })
                 .then(function (resposta) {
                     console.log("resposta: ", resposta);
                     
-                    if (resposta.ok) {                          
+                    if (resposta.ok) {                       
                           setTimeout(() => {
                               window.location = "./login.html";
                             }, "2000");
@@ -177,7 +178,7 @@
                     return false;
                 }else{
                     divmsgerro.innerHTML = mensagemErro;
-                } // FUNCIONOUUUUUUUUUUUUUUUUUUUUUUUUUUUU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DEUS É BOM (e o diabo é ruim)
+                } // FUNCIONOUUUUUUUUUUUUUUUUUUUUUUUUUUUU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
     function entrar(){
@@ -221,7 +222,6 @@
                             window.location.href = "./index.html";
                         }, 2000);
                     });
-    
                 } else {
                     console.log("Houve um erro ao tentar realizar o login!");
                     divmsgerro.innerHTML = mensagemErro;

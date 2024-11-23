@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./assets/skull.png" sizes="16x16">
     <script src="./js/scriptVerificar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <title>DinoTech | Início</title>
 
@@ -45,10 +47,18 @@
     </header>
     <div class="container-leaderboard">
         <div class="kpis-card">
-            <div id="kpis-titulo">Melhor Jogador</div>
-            <div id="melhorJogador"></div>
-            <div id="mediaAcertos"></div>
-            <div id="tempoMedio"></div>
+            <div id="kpis"><h1>Melhor Jogador</h1>
+                <div id="melhorJogador"></div>
+            </div>
+            <div id="kpis"><h1>Média de Acertos</h1>
+                <div id="mediaAcertos"></div>
+            </div>
+            <div id="kpis"><h1>Tempo Médio</h1>
+                <div id="tempoMedio"></div>
+            </div>
+        </div>
+        <div class="graficoChart">
+            <canvas id="myChart"></canvas>
         </div>
     </div>
     <script>
@@ -73,6 +83,28 @@
         });
     }
 
+
+// GRÁFICO CHART.JS
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
     </script>
 
     
