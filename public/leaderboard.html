@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="leaderboard" onload="verificaLogin(), carregarKPIs(), leaderboard(), criarGraficoPerformance()"> 
+<body class="leaderboard" onload="verificaLogin(), carregarKPIs(), leaderboard(), graficoPerformance()"> 
     <header>
         <div class="container">
         <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
@@ -76,14 +76,18 @@
                     <h2 id="tempoTotal"></h2>
                 </div>
             </div>
+        </div>
+        </div>
+        <div class="container-grafico">
+            <div class="titulos"><h1>Gráfico</h1></div>
             <div class="graficoChart">
                 <canvas id="myChart"></canvas>
             </div>
         </div>
-        </div>
     </div>
-    <script>
-      function carregarKPIs() {
+
+<script>
+function carregarKPIs() {
         fetch("/quiz/kpis").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -103,7 +107,7 @@
             console.error(resposta)
         });
     }
-      function leaderboard(){
+function leaderboard(){
 
             fetch("/quiz/leaderboard").then(function (resposta) {
             if (resposta.ok) {
@@ -136,7 +140,9 @@
 
 
 // GRÁFICO CHART.JS
-function criarGraficoPerformance() {
+var grafico
+function graficoPerformance() {
+
     fetch("/quiz/leaderboard")
         .then((resposta) => {
             if (resposta.ok) {
@@ -148,31 +154,48 @@ function criarGraficoPerformance() {
         .then((dados) => {
             var nomes = dados.map((usuario) => usuario.nome); // 
             var performances = dados.map((usuario) => usuario.performance);
-            const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+        if(!grafico){
+
+            const ctx = document.getElementById('myChart');
+            
+            grafico = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: nomes,
+                    datasets: [{
+                        label: 'Performance (%)',
+                        data: performances,
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    },
+                    
+                }
+            });
+        }else{
+                grafico.data.labels = nomes;
+                grafico.data.datasets[0].data = performances;
+                grafico.update();
+        }
         })
         .catch((erro) => {
             console.error(erro);
         });
 }
-    </script>
+
+</script>
 
     

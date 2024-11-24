@@ -869,10 +869,25 @@ h5{
     display: flex;
     justify-self: center;
     flex-direction: row;
-    height: 50rem;
+    height: 40rem;
     background-color: rgba(4, 21, 21, 0.67);
     width: 55%;
 
+}
+
+.container-grafico{
+    
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 10px;
+    align-items: center;
+    height: 28rem;
+    background-color: rgba(4, 21, 21, 0.67);
+    width: 55%;
+    font-size: large
 }
 
 
@@ -887,14 +902,12 @@ h5{
     width: 200px;
     align-items: center;
 
-
 }
 
 .kpis{
     
-
     text-align: center;
-   
+
 }
 
 .ranking{
@@ -953,8 +966,18 @@ h5{
 .graficoChart{
 
     display: flex;
-    height: 300px;
+    height: auto;
     align-self: center;
-    justify-self: end;
+    justify-self: flex-start;
+    height: 100%;
+
+}
+
+#myChart{
+
+    display: flex;
+    align-self: flex-start;
+    height: 800px;
+    width: 800px;
 
 }
