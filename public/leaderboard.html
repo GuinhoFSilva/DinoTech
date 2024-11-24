@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="quiz" onload="carregarKPIs(), leaderboard()"> 
+<body class="quiz" onload="verificaLogin(), carregarKPIs(), leaderboard()"> 
     <header>
         <div class="container">
         <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
@@ -31,7 +31,7 @@
             <li><a href="quiz.html">Quiz</a></li>
             </div>
             <div id="divleader">
-                <li class="atual"><a href="#">Leaderboard</a></li>
+            <li class="atual"><a href="#">Leaderboard</a></li>
             </div>
             <div id="divlogin">
             <li><a href="login.html">Logar</a></li>
@@ -58,22 +58,24 @@
             </div>
         </div>
         <div class="ranking">
-            <div class="titulo">
-            <h1>Jogadores</h1>
-            </div>
-            <div class="jogadores">
-                <div id="idjogadores">
+            <div class="titulos">
+                <div class="ids">
+                    <h1>Id</h1>
                     <h2 id="idjogador"></h2>
                 </div>
-                <div class="nomejogadores">
+                <div class="jogadores">
+                    <h1>Jogadores</h1>
                     <h2 id="nomejogador"></h2>
                 </div>
-                <div id="performancejogadores">
+                <div class="performances">
+                    <h1>Performance</h1>
                     <h2 id="performancejogador"></h2>
                 </div>
-                <div id="tempojogadores">
+                <div class="tempo">
+                    <h1>Tempo</h1>
                     <h2 id="tempoTotal"></h2>
                 </div>
+            </div>
             </div>
         </div>
     </div>
@@ -111,11 +113,11 @@
 
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    for(var i = 0; i <= resposta.length; i++){
+                    for(var i = 0; i < resposta.length; i++){
                         var respostaAtual = resposta[i]
-                        idjogador.innerHTML += `${respostaAtual.idUsuario} - <br>`
+                        idjogador.innerHTML += `${respostaAtual.idUsuario}<br>`
                         nomejogador.innerHTML += ` ${respostaAtual.nome}<br>`
-                        performancejogador.innerHTML += ` - ${respostaAtual.performance} - <br>`
+                        performancejogador.innerHTML += ` ${respostaAtual.performance} <br>`
                         tempoTotal.innerHTML += `${respostaAtual.tempoTotal}<br>`
                         // ${respostaAtual.performance} - ${respostaAtual.tempoTotal} <br>
                     }

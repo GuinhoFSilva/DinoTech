@@ -439,7 +439,6 @@ h4{
 .container-cadastro{
 
     display: flex;
-    justify-content: flex-start;
     margin-left: 32px;
     align-items: center;
     
@@ -496,7 +495,6 @@ h4{
     width: 100%;
     font-size: 26px;
     display: flex;
-    align-items: flex-start;
     justify-content: center;
 
 }
@@ -620,7 +618,6 @@ h5{
 .container-login{
 
     display: flex;
-    justify-content: flex-start;
     margin-left: 32px;
     align-items: center;
     
@@ -642,7 +639,6 @@ h5{
     width: 100%;
     font-size: 26px;
     display: flex;
-    align-items: flex-start;
     justify-content: center;
 
 }
@@ -863,11 +859,11 @@ h5{
     justify-self: center;
     flex-direction: row;
     height: 50rem;
-    background-color: #003c06;
-    width: 60%;
-
+    background-color: rgba(4, 21, 21, 0.67);
+    width: 55%;
 
 }
+
 
 .kpis-card{
 
@@ -897,29 +893,48 @@ h5{
     align-items: center;
     flex-direction: column;
     height: 20rem;
+    margin-left: 30px;
     width: 70%;
     font-size: large;
-
+    
 }
 
-.jogadores{
+.titulos{
 
     display: flex;
     flex-direction: row;
-    /* gap: 24px; */
-    justify-content: center;
+    gap: 60px;
     
+}
+
+.ids .jogadores .performances .tempo{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
-.nomejogadores{
+#nomejogador {
 
-    display: flex;
-    justify-content: center;   
-    align-self: center;
     text-align: center;
-    width: 200px;
-    
 
+}
+
+#idjogador{
+
+    text-align: center;
+
+}
+
+#performancejogador{
+
+    text-align: center;
+
+}
+
+#tempoTotal{
+
+    text-align: center;
 
 }
