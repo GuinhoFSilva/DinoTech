@@ -12,11 +12,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-    <title>DinoTech | Início</title>
+    <title>DinoTech | Leaderboard</title>
 
 </head>
 
-<body class="quiz" onload="verificaLogin(), carregarKPIs(), leaderboard()"> 
+<body class="leaderboard" onload="verificaLogin(), carregarKPIs(), leaderboard(), criarGraficoPerformance()"> 
     <header>
         <div class="container">
         <h1 class="titulo"><a href="index.html">DinoTech</a></h1>
@@ -76,12 +76,12 @@
                     <h2 id="tempoTotal"></h2>
                 </div>
             </div>
+            <div class="graficoChart">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
+        </div>
     </div>
-        <!-- <div class="graficoChart">
-            <canvas id="myChart"></canvas>
-        </div> -->
     <script>
       function carregarKPIs() {
         fetch("/quiz/kpis").then(function (resposta) {
@@ -117,7 +117,7 @@
                         var respostaAtual = resposta[i]
                         idjogador.innerHTML += `${respostaAtual.idUsuario}<br>`
                         nomejogador.innerHTML += ` ${respostaAtual.nome}<br>`
-                        performancejogador.innerHTML += ` ${respostaAtual.performance} <br>`
+                        performancejogador.innerHTML += ` ${respostaAtual.performance}% <br>`
                         tempoTotal.innerHTML += `${respostaAtual.tempoTotal}<br>`
                         // ${respostaAtual.performance} - ${respostaAtual.tempoTotal} <br>
                     }
@@ -136,26 +136,43 @@
 
 
 // GRÁFICO CHART.JS
-// const ctx = document.getElementById('myChart');
+function criarGraficoPerformance() {
+    fetch("/quiz/leaderboard")
+        .then((resposta) => {
+            if (resposta.ok) {
+                return resposta.json();
+            } else {
+                throw "Erro ao buscar dados para o gráfico!";
+            }
+        })
+        .then((dados) => {
+            var nomes = dados.map((usuario) => usuario.nome); // 
+            var performances = dados.map((usuario) => usuario.performance);
+            const ctx = document.getElementById('myChart');
 
-// new Chart(ctx, {
-//   type: 'bar',
-//   data: {
-//     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//     datasets: [{
-//       label: '# of Votes',
-//       data: [12, 19, 3, 5, 2, 3],
-//       borderWidth: 1
-//     }]
-//   },
-//   options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true
-//       }
-//     }
-//   }
-// });
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+        })
+        .catch((erro) => {
+            console.error(erro);
+        });
+}
     </script>
 
     
