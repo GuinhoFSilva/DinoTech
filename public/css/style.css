@@ -150,7 +150,14 @@ header #botaoSair{
     height: 400px;  
     width: 400px;  
     border-radius: 60%;
+    transition: 0.3s;
 
+}
+
+.perfil:hover{
+
+    height: 450px;  
+    width: 450px;  
 
 }
 
@@ -164,13 +171,24 @@ header #botaoSair{
 
     height: 70px;
     cursor: pointer;
+    transition: 0.3s;
 
+}
+.git:hover{
+    height: 80px;
 }
 
 .insta{
 
     height: 65px;
     cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.insta:hover{
+
+    height: 75px;
 
 }
 /* ABA CURIOSIDADES */
