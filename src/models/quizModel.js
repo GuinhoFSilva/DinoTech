@@ -11,10 +11,7 @@ function salvarPontuacao(idUsuario, pontuacao, performance, tempoTotal) {
 
 function leaderboard(){
     var consultaLeaderBD = `
-                      SELECT usuario.idUsuario, usuario.nome, performance, tempoTotal FROM resultadosQuiz
-                      JOIN usuario
-                      ON resultadosQuiz.fkUsuario = usuario.idUsuario
-                      ORDER BY performance DESC, tempoTotal ASC;`
+                      select usuario.idUsuario, usuario.nome, performance, tempoTotal from resultadosquiz join usuario on resultadosquiz.fkusuario = usuario.idusuario order by performance desc, tempoTotal asc;`
 
                       console.log("Executando a consulta SQL: \n" + consultaLeaderBD)
 
@@ -24,7 +21,7 @@ function leaderboard(){
 function kpis(){
 
     var consultaKPISBD = `
-                      SELECT ROUND(AVG(performance), 2) AS Média_de_acertos, ROUND(AVG(tempoTotal), 2) AS Tempo_Médio, (SELECT u.nome FROM resultadosQuiz AS r JOIN usuario AS u ON r.fkUsuario = u.idUsuario ORDER BY r.performance DESC, r.tempoTotal ASC LIMIT 1) as Melhor_Jogador FROM resultadosQuiz;`
+                     select truncate(avg(performance), 2) as Média_de_acertos, truncate(avg(tempoTotal), 2) as Tempo_Médio, (select usuario.nome from resultadosquiz join usuario on resultadosquiz.fkusuario = usuario.idusuario order by resultadosquiz.performance desc, resultadosquiz.tempoTotal asc limit 1) as Melhor_Jogador from resultadosquiz`
 
                        console.log("Executando a consulta SQL: \n" + consultaKPISBD)
 
