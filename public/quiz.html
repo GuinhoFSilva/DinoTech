@@ -81,7 +81,7 @@
     botaoEnd.style.display = 'none'
     aparecer.style.display = 'none'
     function comecar(){
-        inicio = new Date()
+        inicio = new Date() // Usei para registrar o momento inicial do quiz
 
         if(aparecer.style.display == 'none'){
             botaoStart.style.display = 'none'
@@ -151,7 +151,6 @@
         var performance = Math.floor(questoesCorretas * 100 / questoesTotais)
         var pontuacao = questoesCorretas
         var mensagem = ""  
-        var tempo = "segundos"
         fim = new Date()
         var tempoTotal = (fim - inicio) / 1000;
         console.log(`Tempo total: ${tempoTotal} segundos`)
@@ -166,7 +165,7 @@
             mensagem = `Você acertou um total de: ${questoesCorretas} pergunta(s)!
                         sua performance foi de ${performance}%, poderia ter ido melhor :(`
         }
-        mensagem += `<br>Você demorou ${tempoTotal} ${tempo} para realizar o quiz!`
+        mensagem += `<br>Você demorou ${tempoTotal} segundos para realizar o quiz!`
  
 
         divmsg.innerHTML = mensagem
@@ -192,11 +191,9 @@
     }
 
     function refazer(){
-        // terminar()
         setTimeout(() => {
         window.location.reload()
-        }, 1000);
-            
+        }, 1000);        
     }
 
 

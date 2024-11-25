@@ -147,7 +147,7 @@ header #botaoSair{
 
 .perfil{
 
-    height: 400px;  
+    height: 420px;  
     width: 400px;  
     border-radius: 60%;
     transition: 0.3s;
@@ -156,8 +156,8 @@ header #botaoSair{
 
 .perfil:hover{
 
-    height: 450px;  
-    width: 450px;  
+    height: 460px;  
+    width: 440px;  
 
 }
 
